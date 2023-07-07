@@ -1,0 +1,41 @@
+---
+title: "EFSPI regulatory statistics workshop: feedback from previous years"
+author: "Kaspar Rufibach"
+date: "Last change: `r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  rmarkdown::html_document:
+    highlight: pygments
+    number_sections: yes
+    self_contained: yes
+    toc: no
+    toc_depth: 2
+    toc_float: yes
+---
+
+```{r setup, include = FALSE, echo = FALSE}
+## load packages
+packs.html <- c("knitr", "pander", "reporttools", "dplyr", "readxl")
+for (i in 1:length(packs.html)){library(packs.html[i], character.only = TRUE)}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+## past
+path <- getwd()
+past <- as.data.frame(read_excel(paste(path, "/data/past.xlsx", sep = ""), col_types = NULL))
+```
+
+# Feedbacks from previous years (on purpose not linked on main site)
+
+```{r, include=TRUE, echo=FALSE}
+past <- select(past, -Program, -Slidedecks)
+past[, "Feedbacks"] <- ifelse(past[, "Feedbacks"] != "", paste("[", past[, "Year"], "](", past[, "Feedbacks"], ")", sep = ""), "")
+past[is.na(past)] <- ""
+kable(past, align = "cc")
+```
+
+# Who to provide feedback to
+
+For feedback on this page send an email to [Kaspar Rufibach](mailto:kaspar.rufibach@roche.com).
+
+
+

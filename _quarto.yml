@@ -1,0 +1,44 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - publications_stat.qmd
+    - textbook.qmd
+    - software.qmd
+    - talks.qmd
+    - teaching.qmd
+    - working.qmd
+    - posts.qmd
+    
+website:
+  title: "Kaspar Rufibach, biostatistician"
+  navbar:
+    background: info
+    left:
+    - text: "Home"
+      href: index.html
+    - text: "Publications"
+      menu:
+        - text: "Statistical methodological publications"  
+          href: publications_stat.html
+    - text: "Textbook"
+      href: textbook.html
+    - text: "Software"
+      href: software.html
+    - text: "Talks"
+      href: talks.html
+    - text: "Teaching & supervision"
+      href: teaching.html
+    - text: "Working groups"
+      href: working.html
+    - text: "Posts"
+      href: posts.html
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: source

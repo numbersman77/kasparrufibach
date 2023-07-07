@@ -1,0 +1,23 @@
+name: "EFSPI regulatory statistics workshop"
+output_dir: docs
+navbar:
+  title: "EFSPI regulatory statistics workshop"
+  type: inverse
+  left:
+    - text: "2023 workshop"
+      href: next.html
+    - text: "Instructions and FAQs"
+      menu:
+        - text: "Registration"
+          href: registration_faq.html
+        - text: "Speakers, session chairs & panelists"
+          href: speaker.html
+    - text: "Past workshops: programs, slidedecks, recordings"
+      href: past.html
+  output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    include:
+      after_body: footer.html
+    css: styles.css

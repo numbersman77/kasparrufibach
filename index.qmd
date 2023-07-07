@@ -1,0 +1,42 @@
+---
+title: "About"
+output: 
+  rmarkdown::html_document:
+    highlight: pygments
+    number_sections: no
+    self_contained: yes
+    toc: no
+    toc_depth: 2
+    toc_float: yes
+---
+
+<left>![](img/kaspar.jpg){width=300}</left>
+
+[Methods, Collaboration, and Outreach Group (MCO), Product Development Data Sciences, F. Hoffmann-La Roche, Basel, Switzerland](www.roche.com)
+
+I am a mathematical statistician. Through more than 20 years in various biostatistical roles I have complemented my thorough theoretical background with expertise in biostatistics. I am passionate about applying this expertise to solve problems in pharmaceutical drug development.
+
+I am an [Accredited European Statistician](files/Accreditation_FENStat.pdf), a qualification issued by [The Federation of European National Statistical Societies](https://fenstats.eu/).
+
+<a href="files/01_Kaspar_Rufibach_CV.pdf" class="btn btn-info"><i class="fa fa-download"></i> CV</a>
+<a href="files/02_Kaspar_Rufibach_publications.pdf" class="btn btn-info"><i class="fa fa-download"></i> Publications</a>
+<a href="files/03_Kaspar_Rufibach_talks.pdf" class="btn btn-info"><i class="fa fa-download"></i> Talks</a>
+<a href="files/04_Kaspar_Rufibach_teaching.pdf" class="btn btn-info"><i class="fa fa-download"></i> Teaching</a>
+
+# Interests
+
+- Statistical methods to optimize clinical trial designs
+- Advanced survival analysis
+- Probability of success
+- Estimands and causal inference
+- Nonparametric statistics
+
+# Education
+
+- Postdoc in Mathematical Statistics, 2007, [Stanford University](https://statistics.stanford.edu/), United States
+- PhD in Mathematics, 2006, [University of Bern](https://www.imsv.unibe.ch/), Switzerland
+- MSc in Mathematical Statistics and Actuarial Science, 2001, [University of Bern](https://www.imsv.unibe.ch/), Switzerland
+
+
+
+
