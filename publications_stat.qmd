@@ -11,6 +11,40 @@ output:
     toc_float: yes
 ---
 
+```{r setup, include = FALSE, echo = FALSE}
+## load packages
+packs.html <- c("knitr", "pander", "reporttools", "dplyr", "readxl")
+for (i in 1:length(packs.html)){library(packs.html[i], character.only = TRUE)}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+## read in data
+path <- getwd()
+pubs <- as.data.frame(read_excel(paste(path, "/data/publications.xlsx", sep = ""), col_types = NULL))
+pubs$ind <- with(pubs, paste(Type, Nr, sep = ""))
+
+source(paste(path, "/functions/colFmt.r", sep = ""))
+```
+
+```{r echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
+# how to do this with child documents: https://gist.github.com/rmoff/a043676a2f084b81a434
+out1 <- NULL
+ut <- unique(pubs$Type)
+
+for (j in 1:length(ut)){
+    out1 <- c(out1, knit_expand('tools/publications.Rmd'))
+}
+
+# the "knit" command somehow produces unwanted output, this is why I assign its output to a and use a separate chunk to display a
+
+a <- knit(text = unlist(paste(out1, collapse = '\n')), quiet = TRUE)
+```
+
+```{r conferences, echo = FALSE, message = FALSE, warning = FALSE, results = "asis"}
+cat(a)
+```
+
+
 # Submitted
 
 

@@ -1,0 +1,18 @@
+```{r echo = FALSE}
+# how to do this with child documents: https://gist.github.com/rmoff/a043676a2f084b81a434
+
+j <- as.numeric('{{j}}')
+tab <- filter(pubs, Type == ut[j])
+```
+
+# `r paste(ut[j], sep = "")` {-} 
+
+```{r echo = FALSE}
+tab2 <- with(tab, paste(First, " (**", Year, "**). ", Title, ". _", Journal, "_, **", Issue, "**(", Issue, "), ", Pages, sep = ""))
+
+# replace other empty entries
+tab2[is.na(tab2)] <- ""
+
+kable(tab2)
+```
+
