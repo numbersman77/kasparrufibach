@@ -1,6 +1,5 @@
 ---
-title: "Statistical methodological publications"
-date: last-modified
+title: ""
 output: 
   rmarkdown::html_document:
     highlight: pygments
@@ -44,11 +43,3 @@ a <- knit(text = unlist(paste(out1, collapse = '\n')), quiet = TRUE)
 cat(a)
 ```
 
-
-# Submitted
-
-
-
-
-
-# Published

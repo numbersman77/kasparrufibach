@@ -1,5 +1,5 @@
 ---
-title: "Frequently asked questions for speakers, session chairs, and panelists"
+title: "Introductory Medical Statistics textbook"
 date: last-modified
 output: 
   rmarkdown::html_document:
@@ -13,5 +13,21 @@ output:
 
 # Scope and contact
 
-This document provides necessary information for contributors to the workshop. For any further questions please do not hesitate to reach out to one of the [local organizing committee members](local.html).
+Together with my colleagues [Prof. Leo Held](https://www.ebpi.uzh.ch/en/aboutus/departments/biostatistics/teambiostats/held.html) and [Prof. Burkhardt Seifert](https://www.researchgate.net/profile/Burkhardt_Seifert) from the [Division of Biostatistics](https://www.ebpi.uzh.ch/en/aboutus/departments/biostatistics.html) at the [University of Zurich](http://www.uzh.ch) I have written an introductory biostatistics textbook (in german).
+
+[Link Pearson (publisher)](http://www.pearson.ch/HigherEducation/PearsonStudium/1471/9783868941005/Medizinische-Statistik.aspx)
+
+[Link Amazon](http://www.amazon.de/Medizinische-Statistik-Konzepte-Methoden-Anwendungen/dp/3868941002)
+
+[bibtex entry](files/citations/HRS_medStat.bib)
+
+After a thorough introduction in modern biostatistics in the first part of the book, the second part treats special topics relevant in applications, such as analysis of competing risks, measures of agreement, epidemiology and meta-analysis, or analysis of clinical trials.
+
+The book is intended to be used by medical students and medical researchers and is used in the medical curriculum at the [University of Zurich](http://www.uzh.ch).
+
+
+
+
+
+
 
