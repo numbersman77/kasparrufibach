@@ -8,7 +8,7 @@ tab <- filter(posts, type == ut[j])
 # `r paste(ut[j], sep = "")` {-} 
 
 ```{r echo = FALSE}
-tab1 <- paste(tab$date, ": **", tab$title, "** | [link](", tab$link, ")", sep = "")
+tab1 <- paste(tab$date, ": **", tab$title, "** | [link](", tab$link, ") |", sep = "")
 
 kable(tab1, col.names = "")
 ```
