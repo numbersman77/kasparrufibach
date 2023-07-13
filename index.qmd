@@ -26,8 +26,7 @@ output:
     <td class="tg-0lax">![](img/kaspar.jpg){width=400}</td>
     <td class="tg-0lax">[Methods, Collaboration, and Outreach Group (MCO), Product Development Data Sciences, F. Hoffmann-La Roche, Basel, Switzerland](www.roche.com)
     <br><br>
-    <a href="https://linkedin.com/in/kasparrufibach" class="btn btn-info" target = "frame"><i class="fa fa-download"></i> Linkedin</a> <a href="https://scholar.google.com/citations?user=SM74TkcAAAAJ" class="btn btn-info" target = "frame"><i class="fa fa-download"></i> Google scholar</a>
-    <a href="https://webofscience.com/wos/author/record/1783890" class="btn btn-info" target = "frame"><i class="fa fa-download"></i> Pubmed</a>
+    <a href="https://linkedin.com/in/kasparrufibach" class="btn btn-info" target = "frame"><i class="fa fa-download"></i> Linkedin</a> <a href="https://scholar.google.com/citations?user=7OrPLkQAAAAJ&hl=de&authuser=1" class="btn btn-info" target = "frame"><i class="fa fa-download"></i> Google scholar</a>
     <a href="https://arxiv.org/search/?query=rufibach%2C+k&searchtype=all&abstracts=hide&order=-announced_date_first&size=50" class="btn btn-info" target = "frame"><i class="fa fa-download"></i> arxiv</a>
     </td>
   </tr>

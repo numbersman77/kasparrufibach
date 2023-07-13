@@ -1,6 +1,5 @@
 ---
 title: "Working groups I contribute(d) to"
-date: last-modified
 output: 
   rmarkdown::html_document:
     highlight: pygments
