@@ -20,18 +20,16 @@ knitr::opts_chunk$set(echo = TRUE)
 ## read in data
 path <- getwd()
 pubs <- as.data.frame(read_excel(paste(path, "/data/publications.xlsx", sep = ""), col_types = NULL))
-pubs$ind <- with(pubs, paste(Type, Nr, sep = ""))
-
-source(paste(path, "/functions/colFmt.r", sep = ""))
 ```
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
 # how to do this with child documents: https://gist.github.com/rmoff/a043676a2f084b81a434
 out1 <- NULL
 ut <- unique(pubs$Type)
+ut <- ut[c(1:4)]
 
 for (j in 1:length(ut)){
-    out1 <- c(out1, knit_expand('tools/publications.Rmd'))
+    out1 <- c(out1, knit_expand('tools/publications.qmd'))
 }
 
 # the "knit" command somehow produces unwanted output, this is why I assign its output to a and use a separate chunk to display a

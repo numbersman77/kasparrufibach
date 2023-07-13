@@ -20,47 +20,53 @@ tab1[i0] <- paste(tab1, ", to appear.", sep = "")[i0]
 
 # papers with reference
 i2 <- ((tab$Status %in% c("s", "ta")) == FALSE)
-tab1[i2] <- paste(tab1, ", **", tab$Issue, "**(", tab$Issue, "), ", tab$Pages, ". ", sep = "")[i2]
+tab1[i2] <- paste(tab1, ", **", tab$Issue, "**(", tab$Volume, "), ", tab$Pages, ". ", sep = "")[i2]
 
 # add full stop to submitted papers
 tab1[i1] <- paste(tab1, ".", sep = "")[i1]
 
 # doi
 i3 <- (is.na(tab$doi) == FALSE)
-tab1[i3] <- paste(tab1, " [doi](", tab$doi, ") ", sep = "")[i3]
+tab1[i3] <- paste(tab1, " [doi](", tab$doi, ") | ", sep = "")[i3]
 
 # arxiv
 i4 <- (is.na(tab$arxiv) == FALSE)
-tab1[i4] <- paste(tab1, " [arxiv](", tab$arxiv, ") ", sep = "")[i4]
+tab1[i4] <- paste(tab1, " [arxiv](", tab$arxiv, ") | ", sep = "")[i4]
 
 # markdown
 i5 <- (is.na(tab$markdown) == FALSE)
-tab1[i5] <- paste(tab1, " [markdown](", tab$markdown, ") ", sep = "")[i5]
+tab1[i5] <- paste(tab1, " [markdown](", tab$markdown, ") | ", sep = "")[i5]
 
 # github
 i6 <- (is.na(tab$github) == FALSE)
-tab1[i6] <- paste(tab1, " [github](", tab$github, ") ", sep = "")[i6]
+tab1[i6] <- paste(tab1, " [github](", tab$github, ") | ", sep = "")[i6]
 
 # cran
 i7 <- (is.na(tab$cran) == FALSE)
-tab1[i7] <- paste(tab1, " [cran](", tab$cran, ") ", sep = "")[i7]
+tab1[i7] <- paste(tab1, " [R package on cran](", tab$cran, ") | ", sep = "")[i7]
 
 # shiny
 i8 <- (is.na(tab$shiny) == FALSE)
-tab1[i8] <- paste(tab1, " [shiny](", tab$shiny, ") ", sep = "")[i8]
+tab1[i8] <- paste(tab1, " [shiny](", tab$shiny, ") | ", sep = "")[i8]
 
 # linkedin
 i9 <- (is.na(tab$linkedin) == FALSE)
-tab1[i9] <- paste(tab1, " [linkedin](", tab$linkedin, ") ", sep = "")[i9]
+tab1[i9] <- paste(tab1, " [linkedin](", tab$linkedin, ") | ", sep = "")[i9]
 
 # podcast
 i10 <- (is.na(tab$podcast) == FALSE)
-tab1[i10] <- paste(tab1, " [podcast](", tab$podcast, ") ", sep = "")[i10]
+tab1[i10] <- paste(tab1, " [podcast](", tab$podcast, ") | ", sep = "")[i10]
 
 # video
 i11 <- (is.na(tab$video) == FALSE)
-tab1[i11] <- paste(tab1, " [video](", tab$video, ") ", sep = "")[i11]
+tab1[i11] <- paste(tab1, " [video](", tab$video, ") | ", sep = "")[i11]
 
-kable(tab1, col.names = "")
+# comment
+i12 <- (is.na(tab$comment) == FALSE)
+tab1[i12] <- paste(tab1, ". ", tab$comment, sep = "")[i12]
+
+tab2 <- data.frame(cbind(tab$Nr, tab1))
+
+kable(tab2, col.names = c("", ""))
 ```
 

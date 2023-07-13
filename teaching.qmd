@@ -1,5 +1,5 @@
 ---
-title: "Frequently asked questions for speakers, session chairs, and panelists"
+title: ""
 date: last-modified
 output: 
   rmarkdown::html_document:
@@ -11,7 +11,9 @@ output:
     toc_float: yes
 ---
 
-# Scope and contact
+# Teaching and supervision
 
-This document provides necessary information for contributors to the workshop. For any further questions please do not hesitate to reach out to one of the [local organizing committee members](local.html).
+This page is still under construction.
+
+Meanwhile, a pdf file listing all my talks can be [downloaded](files/04_Kaspar_Rufibach_teaching.pdf).
 

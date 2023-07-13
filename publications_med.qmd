@@ -1,6 +1,5 @@
 ---
 title: ""
-date: last-modified
 output: 
   rmarkdown::html_document:
     highlight: pygments
@@ -11,9 +10,6 @@ output:
     toc_float: yes
 ---
 
-# Talks
+# Articles in medical journals
 
-This page is still under construction.
-
-Meanwhile, a pdf file listing all my talks can be [downloaded](files/03_Kaspar_Rufibach_talks.pdf).
-
+[Download list](files/05_Kaspar_Rufibach_publications_medical.pdf)

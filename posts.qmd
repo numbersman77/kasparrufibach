@@ -1,6 +1,5 @@
 ---
-title: "Frequently asked questions for speakers, session chairs, and panelists"
-date: last-modified
+title: ""
 output: 
   rmarkdown::html_document:
     highlight: pygments
@@ -11,7 +10,33 @@ output:
     toc_float: yes
 ---
 
-# Scope and contact
+```{r setup, include = FALSE, echo = FALSE}
+## load packages
+packs.html <- c("knitr", "pander", "reporttools", "dplyr", "readxl")
+for (i in 1:length(packs.html)){library(packs.html[i], character.only = TRUE)}
 
-This document provides necessary information for contributors to the workshop. For any further questions please do not hesitate to reach out to one of the [local organizing committee members](local.html).
+knitr::opts_chunk$set(echo = TRUE)
+
+## read in data
+path <- getwd()
+posts <- as.data.frame(read_excel(paste(path, "/data/posts.xlsx", sep = ""), col_types = NULL))
+```
+
+```{r echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
+# how to do this with child documents: https://gist.github.com/rmoff/a043676a2f084b81a434
+out1 <- NULL
+ut <- unique(posts$type)
+
+for (j in 1:length(ut)){
+    out1 <- c(out1, knit_expand('tools/posts.qmd'))
+}
+
+# the "knit" command somehow produces unwanted output, this is why I assign its output to a and use a separate chunk to display a
+
+a <- knit(text = unlist(paste(out1, collapse = '\n')), quiet = TRUE)
+```
+
+```{r conferences, echo = FALSE, message = FALSE, warning = FALSE, results = "asis"}
+cat(a)
+```
 

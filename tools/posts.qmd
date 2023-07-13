@@ -1,0 +1,15 @@
+```{r echo = FALSE}
+# how to do this with child documents: https://gist.github.com/rmoff/a043676a2f084b81a434
+
+j <- as.numeric('{{j}}')
+tab <- filter(posts, type == ut[j])
+```
+
+# `r paste(ut[j], sep = "")` {-} 
+
+```{r echo = FALSE}
+tab1 <- paste(tab$date, ": **", tab$title, "** | [link](", tab$link, ")", sep = "")
+
+kable(tab1, col.names = "")
+```
+

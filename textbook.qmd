@@ -1,6 +1,5 @@
 ---
 title: "Introductory Medical Statistics textbook"
-date: last-modified
 output: 
   rmarkdown::html_document:
     highlight: pygments
@@ -11,7 +10,7 @@ output:
     toc_float: yes
 ---
 
-# Scope and contact
+![](img/book.jpg){width=300}
 
 Together with my colleagues [Prof. Leo Held](https://www.ebpi.uzh.ch/en/aboutus/departments/biostatistics/teambiostats/held.html) and [Prof. Burkhardt Seifert](https://www.researchgate.net/profile/Burkhardt_Seifert) from the [Division of Biostatistics](https://www.ebpi.uzh.ch/en/aboutus/departments/biostatistics.html) at the [University of Zurich](http://www.uzh.ch) I have written an introductory biostatistics textbook (in german).
 

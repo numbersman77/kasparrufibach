@@ -4,6 +4,7 @@ project:
   render:
     - index.qmd
     - publications_stat.qmd
+    - publications_med.qmd
     - textbook.qmd
     - software.qmd
     - talks.qmd
@@ -22,6 +23,8 @@ website:
       menu:
         - text: "Statistical methodological publications"  
           href: publications_stat.html
+        - text: "Biomedical publications"  
+          href: publications_med.html
     - text: "Textbook"
       href: textbook.html
     - text: "Software"

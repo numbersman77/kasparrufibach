@@ -1,5 +1,5 @@
 ---
-title: "Frequently asked questions for speakers, session chairs, and panelists"
+title: "Working groups I contribute(d) to"
 date: last-modified
 output: 
   rmarkdown::html_document:
@@ -11,7 +11,25 @@ output:
     toc_float: yes
 ---
 
-# Scope and contact
+# NIHR-MRC Trials Methodology Research Partnership (TMRP) Outcomes Working Group: Adverse Events - evaluating harm (lead of estimand workstream)
 
-This document provides necessary information for contributors to the workshop. For any further questions please do not hesitate to reach out to one of the [local organizing committee members](local.html).
+See [here](http://www.methodologyhubs.mrc.ac.uk/about/working-groups/) for details.
+
+# SAVVY: Survival analysis for AdVerse events with VarYing follow-up times
+
+The SAVVY project is a consortium of academic and pharmaceutical industry partners that aims to improve the analyses of adverse event (AE) data in clinical trials through the use of survival techniques appropriately dealing with varying follow-up times and competing events. Although statistical methodologies have advanced, in AE analyses often the incidence proportion, the incidence density or a non-parametric Kaplan-Meier estimator are used, which either ignore censoring or competing events. In an empirical study including randomized clinical trials from several sponsor companies, these potential sources of bias are investigated. 
+
+Roche has contributed data from three clinical trials to this project. I coordinate the Roche efforts, am actively involved in writing papers within the project, and serve as a member of the SAVVY steering committee.
+
+[SAVVY webpage](https://numbersman77.github.io/savvy)
+
+- [Statistical Analysis Plan of SAVVY project](https://doi.org/10.1002/bimj.201900347)
+- [Estimation of AE risks](https://doi.org/10.1186/s13063-021-05354-x)
+- [Comparison of AE risk in a two-arm RCT](https://doi.org/10.1080/19466315.2022.2144944)
+- [markdown](https://numbersman77.github.io/savvy/code.html) | [github](https://github.com/numbersman77/AEprobs)
+- [Estimating and comparing adverse event probabilities in the presence of varying follow-up times and competing events](https://doi.org/10.1002/pst.2130)
+
+# Oncology estimand working group
+
+I co-founded and co-lead this group. Find more details [here](www.oncoestimand.org).
 

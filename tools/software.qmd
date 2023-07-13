@@ -1,0 +1,46 @@
+```{r echo = FALSE}
+# how to do this with child documents: https://gist.github.com/rmoff/a043676a2f084b81a434
+
+j <- as.numeric('{{j}}')
+tab <- filter(soft, type == ut[j])
+```
+
+# `r paste(ut[j], sep = "")` {-} 
+
+```{r echo = FALSE}
+tab1 <- paste("_", tab$title, "_. |", sep = "")
+
+# project webpage
+i8 <- (is.na(tab$webpage) == FALSE)
+tab1[i8] <- paste(tab1, " [project webpage](", tab$webpage, ") | ", sep = "")[i8]
+
+# code
+i2 <- (is.na(tab$code) == FALSE)
+tab1[i2] <- paste(tab1, " [R code](", tab$cran, ") | ", sep = "")[i2]
+
+# cran
+i7 <- (is.na(tab$cran) == FALSE)
+tab1[i7] <- paste(tab1, " [R package on cran](", tab$cran, ") | ", sep = "")[i7]
+
+# github
+i6 <- (is.na(tab$github) == FALSE)
+tab1[i6] <- paste(tab1, " [github](", tab$github, ") | ", sep = "")[i6]
+
+# markdown
+i5 <- (is.na(tab$markdown) == FALSE)
+tab1[i5] <- paste(tab1, " [markdown](", tab$markdown, ") | ", sep = "")[i5]
+
+# doi
+i3 <- (is.na(tab$doi) == FALSE)
+tab1[i3] <- paste(tab1, " [journal paper](", tab$doi, ") | ", sep = "")[i3]
+
+# arxiv
+i4 <- (is.na(tab$arxiv) == FALSE)
+tab1[i4] <- paste(tab1, " [paper on arxiv](", tab$arxiv, ") | ", sep = "")[i4]
+
+tab2 <- data.frame(cbind(length(tab1):1, tab1))
+
+
+kable(tab2, col.names = c("", ""))
+```
+
