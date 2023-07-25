@@ -1,0 +1,62 @@
+---
+title: ""
+date: last-modified
+output: 
+  rmarkdown::html_document:
+    highlight: pygments
+    number_sections: yes
+    self_contained: yes
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+## load packages
+packs.html <- c("knitr", "pander", "dplyr", "readxl", "ggplot2", "lubridate", "tidyr")
+for (i in 1:length(packs.html)){library(packs.html[i], character.only = TRUE)}
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Work as a biostatistician at Roche
+
+Biostatisticians are part of the _Product Development Data Sciences Department_ at Roche, together with statistical programmers and people-reported outcomes scientists. Locations are in Basel (Switzerland), Welwyn (UK), South San Francisco (US), Mississauga (CA), and Shanghai (China). The Department has recently been re-organized but the former vision of the department was:
+
+**Bringing data to life to accelerate innovation across Roche**
+
+[Biostatistics leadership team on this vision](https://www.youtube.com/watch?v=KeA3e7z7E9Q&authuser=0)
+
+[Read about four Roche data scientists](https://careers.roche.com/global/en/meet-our-data-scientists)
+
+## Methods, Collaboration, and Outreach Group (MCO)
+
+MCO is a group within the Department of Biostatistics, currently consisting of the head, six full-time permanent and two part-time members (one of which is [Kaspar Rufibach](http://www.kasparrufibach.ch)). 
+
+The broad remit of the group is to support the clinical biostatisticians and data science in general in their daily work, through consulting, methods development, collaboration and outreach activities (e.g. in X-pharma working groups, supervision of students, collaboration with academics or regulators, etc). Typically, members of the group have broad experience in applied and clinical biostatistics. 
+
+Support of MCO is not restricted to clinical development but exercises throughout the company where quantitative expertise is needed.
+
+# Jobs at Roche
+
+[Roche job portal](https://careers.roche.com/global/en)
+
+Search for "statistics" and "biostatistics".
+
+# Internships within Roche biostatistics in Basel
+
+We have up to ten internship every year in Basel. They are typically announced in the above portal.
+
+Note that in Basel, we only hire students who are currently enrolled at a University typically studying towards an MSc or PhD degree. **We do not hire graduates for internships**. If you have already graduated I invite you to apply for regular jobs under the portal linked above.
+
+# Tips
+
+If you'd like to work as a statistician in pharma, consider the following:
+
+ + There are many opportunities for quantitatively trained people in pharma, the work as a clinical biostatistician just being one of them.
+ + It is not easy to get into a large pharma company. Many of those now working in pharma applied more than once, and maybe also started their career elsewhere, e.g. in a clinical research organization (CRO).
+ + The advantage of working in a large company is that you can "change job" within the company. So, if it is difficult to land a job where you would like to end up, start somewhere else and then move within the company.
+ + A lot relies on being known. To increase your visibility consider attending or presenting at conferences, [BBS seminars](http://www.bbsbasel.ch), talk to people working where you would like to work, ...
+ + **Persistence** and **patience** are key.
+
+

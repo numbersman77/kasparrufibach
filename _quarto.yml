@@ -11,6 +11,7 @@ project:
     - teaching.qmd
     - working.qmd
     - posts.qmd
+    - roche_ds.qmd
     
 website:
   title: "Kaspar Rufibach, biostatistician"
@@ -37,6 +38,8 @@ website:
       href: working.html
     - text: "Posts"
       href: posts.html
+    - text: "Data science at Roche"
+      href: roche_ds.html
 
 format:
   html:
