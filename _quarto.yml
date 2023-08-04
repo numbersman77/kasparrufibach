@@ -12,6 +12,7 @@ project:
     - working.qmd
     - posts.qmd
     - roche_ds.qmd
+    - podcasts.qmd
     
 website:
   title: "Kaspar Rufibach, biostatistician"
@@ -30,6 +31,8 @@ website:
       href: textbook.html
     - text: "Software"
       href: software.html
+    - text: "Podcasts"
+      href: podcasts.html
     - text: "Talks"
       href: talks.html
     - text: "Teaching & supervision"

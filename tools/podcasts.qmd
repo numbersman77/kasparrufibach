@@ -1,0 +1,15 @@
+```{r echo = FALSE}
+# how to do this with child documents: https://gist.github.com/rmoff/a043676a2f084b81a434
+tab <- podcasts
+```
+
+```{r echo = FALSE}
+tab1 <- data.frame(cbind(paste(as.character(tab$Date), "                                     ", sep = ""), tab$Forum, tab$Title, tab$"Co-presenter"))
+
+# link if available
+i1 <- (is.na(tab$Link) == FALSE)
+tab1[i1, 3] <- paste("[", tab$Title[i1], "](", tab$Link[i1], ")", sep = "")
+
+kable(tab1, col.names = c("Date", "Forum", "Title", "Co-presenter"))
+```
+

@@ -11,13 +11,7 @@ output:
     toc_float: yes
 ---
 
-# Status of this page
-
-This page is still under construction, I keep adding talks, mainly those for which I provide slides.
-
-A pdf file listing all my talks can be [downloaded](files/03_Kaspar_Rufibach_talks.pdf).
-
-# Talks for download
+# Podcasts
 
 ```{r setup, include = FALSE, echo = FALSE}
 ## load packages
@@ -28,17 +22,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## read in data
 path <- getwd()
-talks <- as.data.frame(read_excel(paste(path, "/data/talks.xlsx", sep = ""), col_types = NULL))
+podcasts <- as.data.frame(read_excel(paste(path, "/data/podcasts.xlsx", sep = ""), col_types = NULL))
 ```
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
 # how to do this with child documents: https://gist.github.com/rmoff/a043676a2f084b81a434
 out1 <- NULL
-ut <- unique(talks$Type)
 
-for (j in 1:length(ut)){
-    out1 <- c(out1, knit_expand('tools/talks.qmd'))
-}
+out1 <- c(out1, knit_expand('tools/podcasts.qmd'))
 
 # the "knit" command somehow produces unwanted output, this is why I assign its output to a and use a separate chunk to display a
 

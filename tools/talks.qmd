@@ -1,0 +1,15 @@
+```{r echo = FALSE}
+# how to do this with child documents: https://gist.github.com/rmoff/a043676a2f084b81a434
+
+j <- as.numeric('{{j}}')
+tab <- filter(talks, Type == ut[j])
+```
+
+## `r paste(ut[j], sep = "")` {-} 
+
+```{r echo = FALSE}
+tab2 <- data.frame(cbind(as.character(tab$Date), tab$Event, tab$Title, paste("[download slides](", tab$slides, ")", sep = "")))
+
+kable(tab2, col.names = rep("", ncol(tab2)))
+```
+

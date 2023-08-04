@@ -10,6 +10,15 @@ output:
     toc_float: yes
 ---
 
+```{r setup, include = FALSE, echo = FALSE}
+## load packages
+packs.html <- c("readxl")
+for (i in 1:length(packs.html)){library(packs.html[i], character.only = TRUE)}
+
+path <- getwd()
+up <- as.data.frame(read_excel(paste(path, "/data/update.xlsx", sep = ""), col_types = NULL))[1, 1]
+```
+
 # About
 
 <style type="text/css">
@@ -29,7 +38,7 @@ output:
     <a href="https://linkedin.com/in/kasparrufibach" class="btn btn-info" target = "frame"><i class="fa fa-download"></i> Linkedin</a> <a href="https://scholar.google.com/citations?user=7OrPLkQAAAAJ&hl=de&authuser=1" class="btn btn-info" target = "frame"><i class="fa fa-download"></i> Google scholar</a>
     <a href="https://arxiv.org/search/?query=rufibach%2C+k&searchtype=all&abstracts=hide&order=-announced_date_first&size=50" class="btn btn-info" target = "frame"><i class="fa fa-download"></i> arxiv</a>
     <br><br>
-    Last update of this page: 3rd August 2023.
+    Last update of this page: `r up`.
     </td>
   </tr>
 </thead>
