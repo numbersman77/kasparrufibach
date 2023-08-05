@@ -1,5 +1,5 @@
 ---
-title: "Working groups I currently contribute to"
+title: ""
 output: 
   rmarkdown::html_document:
     highlight: pygments
@@ -9,6 +9,10 @@ output:
     toc_depth: 2
     toc_float: yes
 ---
+
+# Basel Biometrics Section
+
+I am a member of the [board](https://baselbiometrics.github.io/home/docs/board.html) of the [Basel Biometrics Section (BBS)](http://www.bbsbasel.ch) and also regularly organize events for the BBS.
 
 # NIHR-MRC Trials Methodology Research Partnership (TMRP) Outcomes Working Group: Adverse Events - evaluating harm (lead of estimand workstream)
 
