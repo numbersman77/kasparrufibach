@@ -10,6 +10,10 @@ tab <- filter(posts, type == ut[j])
 ```{r echo = FALSE}
 tab1 <- paste(tab$date, ": **", tab$title, "** | [link](", tab$link, ") |", sep = "")
 
+# code
+i1 <- (is.na(tab$code) == FALSE)
+tab1[i1] <- paste(tab1, " [code](", tab$code, ") | ", sep = "")[i1]
+
 kable(tab1, col.names = "")
 ```
 

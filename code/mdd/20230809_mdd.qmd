@@ -1,0 +1,246 @@
+---
+title: "Minimal detectable difference for a time-to-event endpoint in a Phase 3 clinical trial"
+author: "Kaspar Rufibach, 9th August 2023"
+output: 
+  rmarkdown::html_document:
+    highlight: pygments
+    number_sections: no
+    self_contained: yes
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+---
+
+```{r, include=TRUE, echo=FALSE}
+colFmt <- function(x, color = 'red'){
+
+  require(knitr)
+  
+  # http://stackoverflow.com/questions/29067541/rmarkdown-how-to-change-the-font-color
+  x <- as.character(x)
+  outputFormat <- opts_knit$get("rmarkdown.pandoc.to")
+  if(outputFormat == 'latex')
+    paste("\\textcolor{", color, "}{", x, "}", sep = "")
+  else if(outputFormat == 'html')
+    paste("<font color='", color, "'>", x, "</font>", sep = "")
+  else
+    x
+}
+```
+
+# Purpose of this document
+
+This R markdown file accompanies this [linkedin post](https://www.linkedin.com/posts/kasparrufibach_here-is-a-question-for-anyone-working-on-activity-7094488116748529664-9TYr?utm_source=share&utm_medium=member_desktop), provides the code to reproduce computations, and much more. 
+
+# Setup
+
+```{r, include=TRUE, echo=TRUE}
+# we use rpact for some basic computations
+library(rpact)
+```
+
+# Trial design
+
+First, let us specify the basic parameters of a Phase 3 clinical trial with a time-to-event endpoint:
+
+```{r, include=TRUE, echo=TRUE}
+# --------------------------------------------------------------
+# probability of type I and type II error
+# --------------------------------------------------------------
+alpha <- 0.05
+beta <- 0.2
+
+# effect size we target
+hr <- 0.75
+
+# required events for single-stage design, i.e. without interim
+nevent0 <- rpact::getSampleSizeSurvival(hazardRatio = hr, sided = 2, alpha = alpha, beta = beta)
+nevent <- ceiling(nevent0$maxNumberOfEvents)
+nevent 
+```
+
+So we plan a trial assuming:
+
+- 1:1 randomization,
+- no interim analyses,
+- `r 100 * (1 - beta)`% power to 
+- detect a hazard ratio (HR) of `r hr` 
+- using a two-sided logrank test 
+- with a significance level of `r alpha`. 
+
+The number of events needed for these assumptions is then $d := `r nevent`$. Assume we have run the trial and collected these 380 events events in a certain number of patients. The question is:
+
+# Question
+
+**What hazard ratio in favor of the experimental treatment do we need to observe such that we get a one-sided $p$-value of exactly $\alpha / 2 = `r alpha / 2`$?**
+
+# Answer
+
+The answer to the above question is, what I call, the `r colFmt("minimal detectable difference (MDD)")`. It can be computed in various ways which I all describe below. 
+
+Note that we work on the log(HR) scale. This, because the estimate $\hat \theta = \log(\widehat{\text{HR}})$ can well be approximated through a Normal distribution according to 
+$$
+\hat{\theta} := \log(\widehat{\text{HR}}) \ = \ N(\theta, 4 / d).
+$$
+
+## Critical value of hypothesis test on effect scale
+
+The MDD is, simply speaking, the critical value of the hypothesis test on the scale of the effect size of interest. So, to find the answer to our question above we simply have to solve
+$$
+\frac{\hat{\theta}}{\text{SE}(\hat{\theta})} \ = \ -q_{1 - \alpha / 2}
+$$
+for $\hat \theta$, giving us 
+$$
+\hat \theta \ = \ \exp\Bigl(-q_{1 - \alpha / 2} \text{SE}(\hat{\theta})\Bigr).
+$$
+Let us verify this:
+
+```{r, include=TRUE, echo=TRUE}
+# compute MDD as rescaled critical value of hypothesis test:
+se <- sqrt(4 / nevent)
+mdd <- exp(-qnorm(1 - alpha / 2) * se)
+mdd
+
+# one-sided p-value at MDD
+pnorm(log(mdd) / se)
+```
+
+## Value of hazard ratio such that upper end of confidence interval is just at 1
+
+Alternatively, exploiting the connection between hypothesis test and confidence interval, we can find the MDD as the center of a $1 - \alpha$ confidence interval that has its upper limit exactly at a HR of 1, corresponding to a log(HR) at 0, i.e. we solve
+$$
+\hat \theta + q_{1 - \alpha / 2} \text{SE}(\hat{\theta}) \ != \ 0
+$$
+for $\hat \theta$ again giving the same expression as above.
+
+## Pick alternative in sample size formula such that it is centered on the critical value
+
+The below figure can be used to motivate derivation of a sample size formula assessing 
+$$
+H_0 \ : \ \theta = \theta_0 = 0 \ \ \text{vs.} \ \ H_1 \ : \ \theta = \theta_1 \ne \theta_0.
+$$
+The figure reveals that we precisely get a test for the MDD if we center the alternative at $\theta_1 =$ MDD, which implies that we can compute the MDD using the usual sample size formula by choosing 50% power.
+
+```{r, echo = FALSE, results = 'asis', message = FALSE, fig.cap = "", fig.align = "center", fig.width = 7, fig.height = 5.5}
+theta <- hr
+
+n <- 1
+sigma <- 1
+se <- sigma * sqrt(2 / n)
+alpha <- 0.05
+q <- qnorm(1 - alpha/2)
+
+# ---------------------------------------------
+# H0
+# ---------------------------------------------
+x <- sort(c(q, -q, seq(-10, 10, by = 0.01)))
+y <- dnorm(x)
+par(mar = c(0, 0, 0, 1), oma = c(0, 0, 0, 0), las = 0.2, cex = 1.15)
+
+plot(x, y, xlab = "", ylab = "", type = "l", xaxt = "n", yaxt = "n", ylim = c(-0.06, 0.45), 
+     xlim = c(-6.1, 3.2), bty = "n", lwd = 2)
+
+xsel <- x[x >= q]
+ysel <- y[x >= q]
+nx <- length(xsel)
+polygon(c(xsel, xsel[nx:1]), c(ysel, rep(0, nx)), col = "blue")
+polygon(-c(xsel, xsel[nx:1]), c(ysel, rep(0, nx)), col = "blue")
+
+segments(-10, 0, 10, 0, lwd = 2)
+text(- qnorm(1 - alpha / 15), 0.035, expression(alpha*" / 2"), adj = 0.5)
+text(qnorm(1 - alpha / 15), 0.035, expression(alpha*" / 2"), adj = 0.5)
+
+segments(0, 0, 0, 0.42)
+text(0, 0.44, expression(H[0]*": "*theta*" = "*theta[0]*" = log(1) = 0"), adj = 0.5)
+
+arrows(2, 0.2, se / 2, dnorm(se), length = 0.1, code = 2, angle = 25)
+text(2, 0.22, expression("S.E. = "*sqrt(4/d)), adj = 0.5)
+segments(se, dnorm(se), 0, dnorm(se), lty = 3, lwd = 2)
+
+arrows(0, -0.04, -q, -0.04, length = 0.1, code = 3, angle = 25)
+text(-q / 2, -0.06, expression(z["1-"*alpha*"/2"]*sqrt(4/d)), adj = 0.5)
+
+segments(-q, dnorm(-q), -q, dnorm(0), lty = 3, lwd = 2)
+text(-q, dnorm(0) * 1.05, "critical value = MDD", col = "blue")
+
+text(0, -0.015, "0")
+
+# ---------------------------------------------
+# H1
+# ---------------------------------------------
+delta <- -3.5
+beta <- 0.2
+
+x <- sort(c(-q, delta + seq(-10, 10, by = 0.01)))
+y <- dnorm(x, mean = delta)
+lines(x, y, lwd = 2)
+
+xsel <- x[x >= -q]
+ysel <- y[x >= -q]
+nx <- length(xsel)
+polygon(c(xsel, xsel[nx:1]), c(ysel, rep(0, nx)), col = "red")
+
+segments(delta, 0, delta, 0.42)
+#text(delta, 0.44, bquote(paste("H"[1]*": "*theta*" = log(", .(round(theta, 3))*")")), adj = 0.5)
+text(delta, 0.44, bquote(paste("H"[1]*": "*theta*" = "*theta[1])), adj = 0.5)
+
+arrows(-q, -0.04, delta, -0.04, length = 0.1, code = 3, angle = 25)
+text((-q + delta) / 2, -0.06, expression(z["1-"*beta]*sqrt(4/d)), adj = 0.5)
+
+text(-0.81 * q, 0.035, expression(beta), adj = 0.5)
+
+text(delta, -0.015, expression(theta))
+
+text((-q + delta) / 2, 0.1, expression("Power 1 - "*beta))
+
+arrows(delta - 2, 0.2, delta - se / 2, dnorm(-se), length = 0.1, code = 2, angle = 25)
+text(delta - 2, 0.22, expression("S.E. = "*sqrt(4/d)), adj = 0.5)
+segments(delta, dnorm(-se), delta - se, dnorm(-se), lty = 3, lwd = 2)
+
+segments(-q, 0, -q, dnorm(-q, mean = delta), lty = 1, lwd = 2)
+
+
+
+```
+
+Let us again verify this: we need to solve the sample size formula of the logrank test for $\theta$:
+$$
+d \ = \ \frac{4(q_{1 - \alpha / 2} + q_{1 - \beta})^2}{\theta^2} \Leftrightarrow \\
+\theta \ = \ \pm(q_{1 - \alpha / 2} + q_{1 - \beta}) \sqrt{4 / d}.
+$$
+So:
+
+```{r, include=TRUE, echo=TRUE}
+# set power to 50%
+beta2 <- 0.5
+
+# exponentiate to get hazard ratio (theta = log(HR)):
+fac <- qnorm(1 - alpha / 2) + qnorm(1 - beta2)
+exp(c(-1, 1) * fac * sqrt(4 / nevent))
+```
+## Using rpact
+
+Finally, [rpact](https://cran.r-project.org/package=rpact) automatically gives us the critical value on the effect scale:
+
+```{r, include=TRUE, echo=TRUE}
+nevent0$criticalValuesEffectScaleLower
+```
+
+# Some comments
+
+The critical value of a hypothesis test is derived assuming the null hypothesis is true. As a consequence, the MDD does not need any assumption about exponentiality or proportional hazards. Strictly speaking, an assumption about the alternative comes in through the number of events that are computed (defining $\text{SE}(\hat{\theta})$) making a specific assumption about a treatment effect.
+
+# Clinical implications
+
+So, let us again recap: 
+
+- Our trial has power of `r 100 * (1 - beta)`% at an alternative of HR = `r hr`. However, that is a consideration under a specific alternative hypothesis $H_1$.
+- Since the critical value of a hypothesis test is computed assuming the null hypothesis $H_0$ is true the above consideration does not tell us anything about for which effect size the hypothesis test is statistically significant. We call this effect the **minimal detectable difference**. Above I have illustrated several ways to compute this MDD and in our example it amounts to `r round(mdd, 3)`.
+
+Now, to me it somewhat surprising that in clinical trial design focus is so much on the `r colFmt("effect we power at")`, i.e. the hazard ratio of `r hr` in our example. In my opinion this carries a risk of being misinterpreted in the sense that stakeholders are of the opinion that - if the trial is statistically significant - we will indeed observe a HR of `r hr`. However, that is obviously not the case: the trial will also be statistically significant for any final HR estimate in the interval $(`r hr`, `r round(mdd, 3)`]$. So, when designing a trial planners should not focus on a discussion of the HR we power at, but rather on the MDD and ask
+
+**Will we change clinical practice if at the end of the trial we observe a hazard ratio of `r round(mdd, 3)`?**
+
+Otherwise, if stakeholders are of the opinion to "get" `r hr` in case of a successful trial there is a risk for disappointment, and even a _statistically significant but clinically irrelevant trial_ in case $\hat{\theta} \in (`r hr`, `r round(mdd, 3)`]$.
+
+
