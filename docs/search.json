@@ -7,6 +7,34 @@
     "text": "This R markdown file accompanies this linkedin post, provides the code to reproduce computations, and much more."
   },
   {
+    "objectID": "code/mdd/20230809_mdd.html#critical-value-of-hypothesis-test-on-effect-scale",
+    "href": "code/mdd/20230809_mdd.html#critical-value-of-hypothesis-test-on-effect-scale",
+    "title": "Minimal detectable difference for a time-to-event endpoint in a Phase 3 clinical trial",
+    "section": "Critical value of hypothesis test on effect scale",
+    "text": "Critical value of hypothesis test on effect scale\nThe MDD is, simply speaking, the critical value of the hypothesis test on the scale of the effect size of interest. So, to find the answer to our question above we simply have to solve \\[\n\\frac{\\hat{\\theta}}{\\text{SE}(\\hat{\\theta})} \\ = \\ -q_{1 - \\alpha / 2}\n\\] for \\(\\hat \\theta\\), giving us \\[\n\\hat \\theta \\ = \\ \\exp\\Bigl(-q_{1 - \\alpha / 2} \\text{SE}(\\hat{\\theta})\\Bigr).\n\\] Let us verify this:\n\n# compute MDD as rescaled critical value of hypothesis test:\nse &lt;- sqrt(4 / nevent)\nmdd &lt;- exp(-qnorm(1 - alpha / 2) * se)\nmdd\n\n[1] 0.8178404\n\n# one-sided p-value at MDD\npnorm(log(mdd) / se)\n\n[1] 0.025"
+  },
+  {
+    "objectID": "code/mdd/20230809_mdd.html#value-of-hazard-ratio-such-that-upper-end-of-confidence-interval-is-just-at-1",
+    "href": "code/mdd/20230809_mdd.html#value-of-hazard-ratio-such-that-upper-end-of-confidence-interval-is-just-at-1",
+    "title": "Minimal detectable difference for a time-to-event endpoint in a Phase 3 clinical trial",
+    "section": "Value of hazard ratio such that upper end of confidence interval is just at 1",
+    "text": "Value of hazard ratio such that upper end of confidence interval is just at 1\nAlternatively, exploiting the connection between hypothesis test and confidence interval, we can find the MDD as the center of a \\(1 - \\alpha\\) confidence interval that has its upper limit exactly at a HR of 1, corresponding to a log(HR) at 0, i.e. we solve \\[\n\\hat \\theta + q_{1 - \\alpha / 2} \\text{SE}(\\hat{\\theta}) \\ != \\ 0\n\\] for \\(\\hat \\theta\\) again giving the same expression as above."
+  },
+  {
+    "objectID": "code/mdd/20230809_mdd.html#pick-alternative-in-sample-size-formula-such-that-it-is-centered-on-the-critical-value",
+    "href": "code/mdd/20230809_mdd.html#pick-alternative-in-sample-size-formula-such-that-it-is-centered-on-the-critical-value",
+    "title": "Minimal detectable difference for a time-to-event endpoint in a Phase 3 clinical trial",
+    "section": "Pick alternative in sample size formula such that it is centered on the critical value",
+    "text": "Pick alternative in sample size formula such that it is centered on the critical value\nThe below figure can be used to motivate derivation of a sample size formula assessing \\[\nH_0 \\ : \\ \\theta = \\theta_0 = 0 \\ \\ \\text{vs.} \\ \\ H_1 \\ : \\ \\theta = \\theta_1 \\ne \\theta_0.\n\\] The figure reveals that we precisely get a test for the MDD if we center the alternative at \\(\\theta_1 =\\) MDD, which implies that we can compute the MDD using the usual sample size formula by choosing 50% power.\n\n\n\n\n\n\n\nLet us again verify this: we need to solve the sample size formula of the logrank test for \\(\\theta\\): \\[\nd \\ = \\ \\frac{4(q_{1 - \\alpha / 2} + q_{1 - \\beta})^2}{\\theta^2} \\Leftrightarrow \\\\\n\\theta \\ = \\ \\pm(q_{1 - \\alpha / 2} + q_{1 - \\beta}) \\sqrt{4 / d}.\n\\] So:\n\n# set power to 50%\nbeta2 &lt;- 0.5\n\n# exponentiate to get hazard ratio (theta = log(HR)):\nfac &lt;- qnorm(1 - alpha / 2) + qnorm(1 - beta2)\nexp(c(-1, 1) * fac * sqrt(4 / nevent))\n\n[1] 0.8178404 1.2227324"
+  },
+  {
+    "objectID": "code/mdd/20230809_mdd.html#using-rpact",
+    "href": "code/mdd/20230809_mdd.html#using-rpact",
+    "title": "Minimal detectable difference for a time-to-event endpoint in a Phase 3 clinical trial",
+    "section": "Using rpact",
+    "text": "Using rpact\nFinally, rpact automatically gives us the critical value on the effect scale:\n\nnevent0$criticalValuesEffectScaleLower\n\n       [,1]\n[1,] 0.8177"
+  },
+  {
     "objectID": "roche_ds.html",
     "href": "roche_ds.html",
     "title": "Work as a biostatistician at Roche",
@@ -79,9 +107,9 @@
   {
     "objectID": "software.html",
     "href": "software.html",
-    "title": "R packages",
+    "title": "Code",
     "section": "",
-    "text": "R packages\n\n\n\n\n\n14\nsimIDM: Simulating Clinical Trials with Endpoints Progression-Free Survival and Overall Survival using an Illness-Death Model. | R package on cran | github | paper on arxiv |\n\n\n13\neventTrack: Event Prediction for Time-to-Event Endpoints. | R package on cran | journal paper |\n\n\n12\nbpp: Computations Around Bayesian Predictive Power. | R package on cran | journal paper |\n\n\n11\nSurvRegCensCov: Weibull Regression for a Right-Censored Endpoint with Interval-Censored Covariate. | R package on cran | paper on arxiv |\n\n\n10\nlogconcens: Maximum likelihood estimation of a log-concave density based on censored data. | R package on cran | journal paper | paper on arxiv |\n\n\n9\nlogcondiscr: Estimate a Log-Concave Probability Mass Function from Discrete i.i.d. Observations. | R package on cran | journal paper |\n\n\n8\nbiostatUZH: Misc Tools of the Department of Biostatistics, EBPI, University of Zurich. | R code |\n\n\n7\nselectMeta: Estimation of Weight Functions in Meta Analysis. | R package on cran | journal paper |\n\n\n6\nOrdFacReg: Least Squares, Logistic, and Cox-Regression with Ordered Predictors. | R package on cran | journal paper |\n\n\n5\nOrdMonReg: Compute least squares estimates of one bounded or two ordered isotonic regression curves. | R package on cran | journal paper |\n\n\n4\nreporttools: Generate LaTeX Tables of Descriptive Statistics. | R package on cran | journal paper |\n\n\n3\nmodehunt: Multiscale Analysis for Density Functions. | R package on cran | journal paper |\n\n\n2\nsmoothtail: Smooth Estimation of GPD Shape Parameter. | R package on cran | journal paper |\n\n\n1\nlogcondends: Estimate a Log-Concave Probability Density from i.i.d. Observations. | R package on cran | journal paper |\n\n\n\n\n\n\n\ngithub repositories\n\n\n\n\n\n4\ncode for follow-up quantification. | github | journal paper | paper on arxiv |\n\n\n3\nSAVVY project: Survival analysis for AdVerse events with VarYing follow-up times. | project webpage | github | markdown |\n\n\n2\nAnalysis methods for principal stratum estimands motivated by the principal ignorability assumption. | project webpage | github | markdown | journal paper | paper on arxiv |\n\n\n1\nMIRROS clinical trial design. | github | journal paper | paper on arxiv |\n\n\n\n\n\n\n\nCode\n\n\n\n\n\n1\nPlan 3-arm group-sequential trial with FWER control for pairwise comparisons via closed testing. | R code | journal paper |"
+    "text": "Code\n\n\n\n\n\n2\nMinimal detectable difference for a time-to-event endpoint in a Phase 3 clinical trial. | project webpage | markdown |\n\n\n1\nPlan 3-arm group-sequential trial with FWER control for pairwise comparisons via closed testing. | R code | journal paper |\n\n\n\n\n\n\n\nR packages\n\n\n\n\n\n14\nsimIDM: Simulating Clinical Trials with Endpoints Progression-Free Survival and Overall Survival using an Illness-Death Model. | R package on cran | github | paper on arxiv |\n\n\n13\neventTrack: Event Prediction for Time-to-Event Endpoints. | R package on cran | journal paper |\n\n\n12\nbpp: Computations Around Bayesian Predictive Power. | R package on cran | journal paper |\n\n\n11\nSurvRegCensCov: Weibull Regression for a Right-Censored Endpoint with Interval-Censored Covariate. | R package on cran | paper on arxiv |\n\n\n10\nlogconcens: Maximum likelihood estimation of a log-concave density based on censored data. | R package on cran | journal paper | paper on arxiv |\n\n\n9\nlogcondiscr: Estimate a Log-Concave Probability Mass Function from Discrete i.i.d. Observations. | R package on cran | journal paper |\n\n\n8\nbiostatUZH: Misc Tools of the Department of Biostatistics, EBPI, University of Zurich. | R code |\n\n\n7\nselectMeta: Estimation of Weight Functions in Meta Analysis. | R package on cran | journal paper |\n\n\n6\nOrdFacReg: Least Squares, Logistic, and Cox-Regression with Ordered Predictors. | R package on cran | journal paper |\n\n\n5\nOrdMonReg: Compute least squares estimates of one bounded or two ordered isotonic regression curves. | R package on cran | journal paper |\n\n\n4\nreporttools: Generate LaTeX Tables of Descriptive Statistics. | R package on cran | journal paper |\n\n\n3\nmodehunt: Multiscale Analysis for Density Functions. | R package on cran | journal paper |\n\n\n2\nsmoothtail: Smooth Estimation of GPD Shape Parameter. | R package on cran | journal paper |\n\n\n1\nlogcondends: Estimate a Log-Concave Probability Density from i.i.d. Observations. | R package on cran | journal paper |\n\n\n\n\n\n\n\ngithub repositories\n\n\n\n\n\n4\ncode for follow-up quantification. | github | journal paper | paper on arxiv |\n\n\n3\nSAVVY project: Survival analysis for AdVerse events with VarYing follow-up times. | project webpage | github | markdown |\n\n\n2\nAnalysis methods for principal stratum estimands motivated by the principal ignorability assumption. | project webpage | github | markdown | journal paper | paper on arxiv |\n\n\n1\nMIRROS clinical trial design. | github | journal paper | paper on arxiv |"
   },
   {
     "objectID": "teaching.html",
@@ -103,33 +131,5 @@
     "title": "Podcasts",
     "section": "",
     "text": "Podcasts\n\n\n\n\n\nDate\nForum\nTitle\nCo-presenter\n\n\n\n\n01.07.2023\nThe effective statistician podcast\nDriving Statistical Innovation – Barriers And Strategies Part 2\nMouna Akacha\n\n\n04.07.2023\nThe effective statistician podcast\nDriving Statistical Innovation – Barriers And Strategies Part 1\nMouna Akacha\n\n\n01.12.2021\nThe effective statistician podcast\n200th episode - invited as one of contributors to the 10% most downloaded podcasts\nJan Beyersmann\n\n\n06.07.2021\nThe effective statistician podcast\nSAVVY - a principled approach to the analysis of safety data\nJan Beyersmann\n\n\n30.04.2021\nRoche R&D academy horizon magazine\nPut the question first! A plea for a principled approach to plan RWD studies\nDominik Heinzmann\n\n\n17.11.2020\nThe effective statistician podcast\nA deep dive into principal stratification and causal inference\nBjörn Bornkamp"
-  },
-  {
-    "objectID": "code/mdd/20230809_mdd.html#critical-value-of-hypothesis-test-on-effect-scale",
-    "href": "code/mdd/20230809_mdd.html#critical-value-of-hypothesis-test-on-effect-scale",
-    "title": "Minimal detectable difference for a time-to-event endpoint in a Phase 3 clinical trial",
-    "section": "Critical value of hypothesis test on effect scale",
-    "text": "Critical value of hypothesis test on effect scale\nThe MDD is, simply speaking, the critical value of the hypothesis test on the scale of the effect size of interest. So, to find the answer to our question above we simply have to solve \\[\n\\frac{\\hat{\\theta}}{\\text{SE}(\\hat{\\theta})} \\ = \\ -q_{1 - \\alpha / 2}\n\\] for \\(\\hat \\theta\\), giving us \\[\n\\hat \\theta \\ = \\ \\exp\\Bigl(-q_{1 - \\alpha / 2} \\text{SE}(\\hat{\\theta})\\Bigr).\n\\] Let us verify this:\n\n# compute MDD as rescaled critical value of hypothesis test:\nse &lt;- sqrt(4 / nevent)\nmdd &lt;- exp(-qnorm(1 - alpha / 2) * se)\nmdd\n\n[1] 0.8178404\n\n# one-sided p-value at MDD\npnorm(log(mdd) / se)\n\n[1] 0.025"
-  },
-  {
-    "objectID": "code/mdd/20230809_mdd.html#value-of-hazard-ratio-such-that-upper-end-of-confidence-interval-is-just-at-1",
-    "href": "code/mdd/20230809_mdd.html#value-of-hazard-ratio-such-that-upper-end-of-confidence-interval-is-just-at-1",
-    "title": "Minimal detectable difference for a time-to-event endpoint in a Phase 3 clinical trial",
-    "section": "Value of hazard ratio such that upper end of confidence interval is just at 1",
-    "text": "Value of hazard ratio such that upper end of confidence interval is just at 1\nAlternatively, exploiting the connection between hypothesis test and confidence interval, we can find the MDD as the center of a \\(1 - \\alpha\\) confidence interval that has its upper limit exactly at a HR of 1, corresponding to a log(HR) at 0, i.e. we solve \\[\n\\hat \\theta + q_{1 - \\alpha / 2} \\text{SE}(\\hat{\\theta}) \\ != \\ 0\n\\] for \\(\\hat \\theta\\) again giving the same expression as above."
-  },
-  {
-    "objectID": "code/mdd/20230809_mdd.html#pick-alternative-in-sample-size-formula-such-that-it-is-centered-on-the-critical-value",
-    "href": "code/mdd/20230809_mdd.html#pick-alternative-in-sample-size-formula-such-that-it-is-centered-on-the-critical-value",
-    "title": "Minimal detectable difference for a time-to-event endpoint in a Phase 3 clinical trial",
-    "section": "Pick alternative in sample size formula such that it is centered on the critical value",
-    "text": "Pick alternative in sample size formula such that it is centered on the critical value\nThe below figure can be used to motivate derivation of a sample size formula assessing \\[\nH_0 \\ : \\ \\theta = \\theta_0 = 0 \\ \\ \\text{vs.} \\ \\ H_1 \\ : \\ \\theta = \\theta_1 \\ne \\theta_0.\n\\] The figure reveals that we precisely get a test for the MDD if we center the alternative at \\(\\theta_1 =\\) MDD, which implies that we can compute the MDD using the usual sample size formula by choosing 50% power.\n\n\n\n\n\n\n\nLet us again verify this: we need to solve the sample size formula of the logrank test for \\(\\theta\\): \\[\nd \\ = \\ \\frac{4(q_{1 - \\alpha / 2} + q_{1 - \\beta})^2}{\\theta^2} \\Leftrightarrow \\\\\n\\theta \\ = \\ \\pm(q_{1 - \\alpha / 2} + q_{1 - \\beta}) \\sqrt{4 / d}.\n\\] So:\n\n# set power to 50%\nbeta2 &lt;- 0.5\n\n# exponentiate to get hazard ratio (theta = log(HR)):\nfac &lt;- qnorm(1 - alpha / 2) + qnorm(1 - beta2)\nexp(c(-1, 1) * fac * sqrt(4 / nevent))\n\n[1] 0.8178404 1.2227324"
-  },
-  {
-    "objectID": "code/mdd/20230809_mdd.html#using-rpact",
-    "href": "code/mdd/20230809_mdd.html#using-rpact",
-    "title": "Minimal detectable difference for a time-to-event endpoint in a Phase 3 clinical trial",
-    "section": "Using rpact",
-    "text": "Using rpact\nFinally, rpact automatically gives us the critical value on the effect scale:\n\nnevent0$criticalValuesEffectScaleLower\n\n       [,1]\n[1,] 0.8177"
   }
 ]

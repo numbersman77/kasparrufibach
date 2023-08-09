@@ -16,7 +16,7 @@ tab1[i8] <- paste(tab1, " [project webpage](", tab$webpage, ") | ", sep = "")[i8
 
 # code
 i2 <- (is.na(tab$code) == FALSE)
-tab1[i2] <- paste(tab1, " [R code](", tab$cran, ") | ", sep = "")[i2]
+tab1[i2] <- paste(tab1, " [R code](", tab$code, ") | ", sep = "")[i2]
 
 # cran
 i7 <- (is.na(tab$cran) == FALSE)
