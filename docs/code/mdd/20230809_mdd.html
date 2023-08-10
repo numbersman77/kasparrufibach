@@ -242,19 +242,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Trial design</h1>
 <p>First, let us specify the basic parameters of a Phase 3 clinical trial with a time-to-event endpoint:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------------------------------</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># probability of type I and type II error</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------------------------------------------</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># effect size we target</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>hr <span class="ot">&lt;-</span> <span class="fl">0.75</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># required events for single-stage design, i.e. without interim</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>nevent0 <span class="ot">&lt;-</span> rpact<span class="sc">::</span><span class="fu">getSampleSizeSurvival</span>(<span class="at">hazardRatio =</span> hr, <span class="at">sided =</span> <span class="dv">2</span>, <span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>nevent <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(nevent0<span class="sc">$</span>maxNumberOfEvents)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>nevent </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># probability of type I and type II error</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># effect size we target</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>hr <span class="ot">&lt;-</span> <span class="fl">0.75</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># required events for single-stage design, i.e. without interim</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>nevent0 <span class="ot">&lt;-</span> rpact<span class="sc">::</span><span class="fu">getSampleSizeSurvival</span>(<span class="at">hazardRatio =</span> hr, <span class="at">sided =</span> <span class="dv">2</span>, <span class="at">alpha =</span> alpha, <span class="at">beta =</span> beta)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>nevent <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(nevent0<span class="sc">$</span>maxNumberOfEvents)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>nevent </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 380</code></pre>
 </div>
@@ -268,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>using a two-sided logrank test</li>
 <li>with a significance level of 0.05.</li>
 </ul>
-<p>The number of events needed for these assumptions is then <span class="math inline">\(d := 380\)</span>. Assume we have run the trial and collected these 380 events events in a certain number of patients. The question is:</p>
+<p>The number of events needed for these assumptions is then d = 380. Assume we have run the trial and collected these 380 events events in a certain number of patients. The question is:</p>
 </section>
 <section id="question" class="level1">
 <h1>Question</h1>
@@ -277,16 +275,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="answer" class="level1">
 <h1>Answer</h1>
 <p>The answer to the above question is, what I call, the <font color="red">minimal detectable difference (MDD)</font>. It can be computed in various ways which I all describe below.</p>
-<p>Note that we work on the log(HR) scale. This, because the estimate <span class="math inline">\(\hat \theta = \log(\widehat{\text{HR}})\)</span> can well be approximated through a Normal distribution according to <span class="math display">\[
-\hat{\theta} := \log(\widehat{\text{HR}}) \ = \ N(\theta, 4 / d).
-\]</span></p>
+<p>Note that we work on the log(HR) scale. This, because the estimate <span class="math inline">\(\hat \theta = \log(\widehat{\text{HR}})\)</span> can well be approximated through a Normal distribution according to <span class="math display">\[\begin{eqnarray*}
+\hat{\theta} := \log(\widehat{\text{HR}}) &amp;=&amp; N(\theta, 4 / d).
+\end{eqnarray*}\]</span></p>
 <section id="critical-value-of-hypothesis-test-on-effect-scale" class="level2">
 <h2 class="anchored" data-anchor-id="critical-value-of-hypothesis-test-on-effect-scale">Critical value of hypothesis test on effect scale</h2>
-<p>The MDD is, simply speaking, the critical value of the hypothesis test on the scale of the effect size of interest. So, to find the answer to our question above we simply have to solve <span class="math display">\[
-\frac{\hat{\theta}}{\text{SE}(\hat{\theta})} \ = \ -q_{1 - \alpha / 2}
-\]</span> for <span class="math inline">\(\hat \theta\)</span>, giving us <span class="math display">\[
-\hat \theta \ = \ \exp\Bigl(-q_{1 - \alpha / 2} \text{SE}(\hat{\theta})\Bigr).
-\]</span> Let us verify this:</p>
+<p>The MDD is, simply speaking, the critical value of the hypothesis test on the scale of the effect size of interest. So, to find the answer to our question above we simply have to solve <span class="math display">\[\begin{eqnarray*}
+\frac{\hat{\theta}}{\text{SE}(\hat{\theta})} &amp;=&amp; -q_{1 - \alpha / 2}
+\end{eqnarray*}\]</span> for <span class="math inline">\(\hat \theta\)</span>, giving us <span class="math display">\[\begin{eqnarray*}
+\hat \theta &amp;=&amp; \exp\Bigl(-q_{1 - \alpha / 2} \text{SE}(\hat{\theta})\Bigr).
+\end{eqnarray*}\]</span> Let us verify this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute MDD as rescaled critical value of hypothesis test:</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">4</span> <span class="sc">/</span> nevent)</span>
@@ -320,30 +318,18 @@ H_0 \ : \ \theta = \theta_0 = 0 \ \ \text{vs.} \ \ H_1 \ : \ \theta = \theta_1 \
 </figure>
 </div>
 </div>
-<p>Let us again verify this: we need to solve the sample size formula of the logrank test for <span class="math inline">\(\theta\)</span>: <span class="math display">\[
-d \ = \ \frac{4(q_{1 - \alpha / 2} + q_{1 - \beta})^2}{\theta^2} \Leftrightarrow \\
-\theta \ = \ \pm(q_{1 - \alpha / 2} + q_{1 - \beta}) \sqrt{4 / d}.
-\]</span> So:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set power to 50%</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>beta2 <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># exponentiate to get hazard ratio (theta = log(HR)):</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>fac <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> alpha <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> beta2)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">*</span> fac <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="dv">4</span> <span class="sc">/</span> nevent))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.8178404 1.2227324</code></pre>
-</div>
-</div>
+<p>Let us again verify this: we need to solve the sample size formula of the logrank test for <span class="math inline">\(\theta\)</span>: <span class="math display">\[\begin{eqnarray*}
+d  &amp;=&amp;  \frac{4(q_{1 - \alpha / 2} + q_{1 - \beta})^2}{\theta^2} \Leftrightarrow \\
+\theta  &amp;=&amp;  \pm(q_{1 - \alpha / 2} + q_{1 - \beta}) \sqrt{4 / d} \ = \ \pm q_{1 - \alpha / 2} \text{SE}(\hat{\theta}).
+\end{eqnarray*}\]</span> since <span class="math inline">\(q_{0.5} = 0\)</span>. So we end up with the same formula as above.</p>
 </section>
 <section id="using-rpact" class="level2">
 <h2 class="anchored" data-anchor-id="using-rpact">Using rpact</h2>
 <p>Finally, <a href="https://cran.r-project.org/package=rpact">rpact</a> automatically gives us the critical value on the effect scale:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>nevent0<span class="sc">$</span>criticalValuesEffectScaleLower</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>nevent0<span class="sc">$</span>criticalValuesEffectScaleLower[<span class="dv">1</span>, <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       [,1]
-[1,] 0.8177</code></pre>
+<pre><code>[1] 0.8177</code></pre>
 </div>
 </div>
 </section>
@@ -357,9 +343,9 @@ d \ = \ \frac{4(q_{1 - \alpha / 2} + q_{1 - \beta})^2}{\theta^2} \Leftrightarrow
 <p>So, let us again recap:</p>
 <ul>
 <li>Our trial has power of 80% at an alternative of HR = 0.75. However, that is a consideration under a specific alternative hypothesis <span class="math inline">\(H_1\)</span>.</li>
-<li>Since the critical value of a hypothesis test is computed assuming the null hypothesis <span class="math inline">\(H_0\)</span> is true the above consideration does not tell us anything about for which effect size the hypothesis test is statistically significant. We call this effect the <strong>minimal detectable difference</strong>. Above I have illustrated several ways to compute this MDD and in our example it amounts to 0.818.</li>
+<li>Since the critical value of a hypothesis test is computed assuming the null hypothesis <span class="math inline">\(H_0\)</span> is true, the above consideration does not tell us anything about for which effect size the hypothesis test is statistically significant. Rather, to answer the question about statistical significance we need the critical value of the hypothesis test (<span class="math inline">\(=q_{1 - \alpha / 2}\)</span>) on the effect (= hazard ratio) scale. We call this effect the <strong>minimal detectable difference</strong>. Above I have illustrated several ways to compute this MDD, and in our example it amounts to 0.818.</li>
 </ul>
-<p>Now, to me it somewhat surprising that in clinical trial design focus is so much on the <font color="red">effect we power at</font>, i.e.&nbsp;the hazard ratio of 0.75 in our example. In my opinion this carries a risk of being misinterpreted in the sense that stakeholders are of the opinion that - if the trial is statistically significant - we will indeed observe a HR of 0.75. However, that is obviously not the case: the trial will also be statistically significant for any final HR estimate in the interval <span class="math inline">\((0.75, 0.818]\)</span>. So, when designing a trial planners should not focus on a discussion of the HR we power at, but rather on the MDD and ask</p>
+<p>Now, to me it is somewhat surprising that in clinical trial design focus is so much on the <font color="red">effect we power at</font>, i.e.&nbsp;the hazard ratio of 0.75 in our example. In my opinion this carries a risk of being misinterpreted in the sense that stakeholders are of the opinion that - if the trial is statistically significant - we will indeed observe a HR of 0.75. However, that is obviously not the case: the trial will also be statistically significant for any final HR estimate in the interval <span class="math inline">\((0.75, 0.818]\)</span>. So, when designing a trial planners should not focus on a discussion of the HR we power at, but rather on the MDD and ask</p>
 <p><strong>Will we change clinical practice if at the end of the trial we observe a hazard ratio of 0.818?</strong></p>
 <p>Otherwise, if stakeholders are of the opinion to “get” 0.75 in case of a successful trial there is a risk for disappointment, and even a <em>statistically significant but clinically irrelevant trial</em> in case <span class="math inline">\(\hat{\theta} \in (0.75, 0.818]\)</span>.</p>
 

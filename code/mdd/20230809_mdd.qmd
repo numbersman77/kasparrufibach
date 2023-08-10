@@ -45,9 +45,7 @@ library(rpact)
 First, let us specify the basic parameters of a Phase 3 clinical trial with a time-to-event endpoint:
 
 ```{r, include=TRUE, echo=TRUE}
-# --------------------------------------------------------------
 # probability of type I and type II error
-# --------------------------------------------------------------
 alpha <- 0.05
 beta <- 0.2
 
@@ -69,7 +67,7 @@ So we plan a trial assuming:
 - using a two-sided logrank test 
 - with a significance level of `r alpha`. 
 
-The number of events needed for these assumptions is then $d := `r nevent`$. Assume we have run the trial and collected these 380 events events in a certain number of patients. The question is:
+The number of events needed for these assumptions is then d = `r nevent`. Assume we have run the trial and collected these 380 events events in a certain number of patients. The question is:
 
 # Question
 
@@ -80,20 +78,20 @@ The number of events needed for these assumptions is then $d := `r nevent`$. Ass
 The answer to the above question is, what I call, the `r colFmt("minimal detectable difference (MDD)")`. It can be computed in various ways which I all describe below. 
 
 Note that we work on the log(HR) scale. This, because the estimate $\hat \theta = \log(\widehat{\text{HR}})$ can well be approximated through a Normal distribution according to 
-$$
-\hat{\theta} := \log(\widehat{\text{HR}}) \ = \ N(\theta, 4 / d).
-$$
+\begin{eqnarray*}
+\hat{\theta} := \log(\widehat{\text{HR}}) &=& N(\theta, 4 / d).
+\end{eqnarray*}
 
 ## Critical value of hypothesis test on effect scale
 
 The MDD is, simply speaking, the critical value of the hypothesis test on the scale of the effect size of interest. So, to find the answer to our question above we simply have to solve
-$$
-\frac{\hat{\theta}}{\text{SE}(\hat{\theta})} \ = \ -q_{1 - \alpha / 2}
-$$
+\begin{eqnarray*}
+\frac{\hat{\theta}}{\text{SE}(\hat{\theta})} &=& -q_{1 - \alpha / 2}
+\end{eqnarray*}
 for $\hat \theta$, giving us 
-$$
-\hat \theta \ = \ \exp\Bigl(-q_{1 - \alpha / 2} \text{SE}(\hat{\theta})\Bigr).
-$$
+\begin{eqnarray*}
+\hat \theta &=& \exp\Bigl(-q_{1 - \alpha / 2} \text{SE}(\hat{\theta})\Bigr).
+\end{eqnarray*}
 Let us verify this:
 
 ```{r, include=TRUE, echo=TRUE}
@@ -205,26 +203,18 @@ segments(-q, 0, -q, dnorm(-q, mean = delta), lty = 1, lwd = 2)
 ```
 
 Let us again verify this: we need to solve the sample size formula of the logrank test for $\theta$:
-$$
-d \ = \ \frac{4(q_{1 - \alpha / 2} + q_{1 - \beta})^2}{\theta^2} \Leftrightarrow \\
-\theta \ = \ \pm(q_{1 - \alpha / 2} + q_{1 - \beta}) \sqrt{4 / d}.
-$$
-So:
+\begin{eqnarray*}
+d  &=&  \frac{4(q_{1 - \alpha / 2} + q_{1 - \beta})^2}{\theta^2} \Leftrightarrow \\
+\theta  &=&  \pm(q_{1 - \alpha / 2} + q_{1 - \beta}) \sqrt{4 / d} \ = \ \pm q_{1 - \alpha / 2} \text{SE}(\hat{\theta}).
+\end{eqnarray*}
+since $q_{0.5} = 0$. So we end up with the same formula as above.
 
-```{r, include=TRUE, echo=TRUE}
-# set power to 50%
-beta2 <- 0.5
-
-# exponentiate to get hazard ratio (theta = log(HR)):
-fac <- qnorm(1 - alpha / 2) + qnorm(1 - beta2)
-exp(c(-1, 1) * fac * sqrt(4 / nevent))
-```
 ## Using rpact
 
 Finally, [rpact](https://cran.r-project.org/package=rpact) automatically gives us the critical value on the effect scale:
 
 ```{r, include=TRUE, echo=TRUE}
-nevent0$criticalValuesEffectScaleLower
+nevent0$criticalValuesEffectScaleLower[1, 1]
 ```
 
 # Some comments
@@ -236,9 +226,9 @@ The critical value of a hypothesis test is derived assuming the null hypothesis 
 So, let us again recap: 
 
 - Our trial has power of `r 100 * (1 - beta)`% at an alternative of HR = `r hr`. However, that is a consideration under a specific alternative hypothesis $H_1$.
-- Since the critical value of a hypothesis test is computed assuming the null hypothesis $H_0$ is true the above consideration does not tell us anything about for which effect size the hypothesis test is statistically significant. We call this effect the **minimal detectable difference**. Above I have illustrated several ways to compute this MDD and in our example it amounts to `r round(mdd, 3)`.
+- Since the critical value of a hypothesis test is computed assuming the null hypothesis $H_0$ is true, the above consideration does not tell us anything about for which effect size the hypothesis test is statistically significant. Rather, to answer the question about statistical significance we need the critical value of the hypothesis test ($=q_{1 - \alpha / 2}$) on the effect (= hazard ratio) scale. We call this effect the **minimal detectable difference**. Above I have illustrated several ways to compute this MDD, and in our example it amounts to `r round(mdd, 3)`.
 
-Now, to me it somewhat surprising that in clinical trial design focus is so much on the `r colFmt("effect we power at")`, i.e. the hazard ratio of `r hr` in our example. In my opinion this carries a risk of being misinterpreted in the sense that stakeholders are of the opinion that - if the trial is statistically significant - we will indeed observe a HR of `r hr`. However, that is obviously not the case: the trial will also be statistically significant for any final HR estimate in the interval $(`r hr`, `r round(mdd, 3)`]$. So, when designing a trial planners should not focus on a discussion of the HR we power at, but rather on the MDD and ask
+Now, to me it is somewhat surprising that in clinical trial design focus is so much on the `r colFmt("effect we power at")`, i.e. the hazard ratio of `r hr` in our example. In my opinion this carries a risk of being misinterpreted in the sense that stakeholders are of the opinion that - if the trial is statistically significant - we will indeed observe a HR of `r hr`. However, that is obviously not the case: the trial will also be statistically significant for any final HR estimate in the interval $(`r hr`, `r round(mdd, 3)`]$. So, when designing a trial planners should not focus on a discussion of the HR we power at, but rather on the MDD and ask
 
 **Will we change clinical practice if at the end of the trial we observe a hazard ratio of `r round(mdd, 3)`?**
 
