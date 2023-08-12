@@ -278,13 +278,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Note that we work on the log(HR) scale. This, because the estimate <span class="math inline">\(\hat \theta = \log(\widehat{\text{HR}})\)</span> can well be approximated through a Normal distribution according to <span class="math display">\[\begin{eqnarray*}
 \hat{\theta} := \log(\widehat{\text{HR}}) &amp;=&amp; N(\theta, 4 / d).
 \end{eqnarray*}\]</span></p>
+<p>with <span class="math inline">\(\theta\)</span> the true underlying log hazard ratio and <span class="math inline">\(\text{SE}(\hat{\theta}) = \sqrt{4 / d}\)</span>.</p>
 <section id="critical-value-of-hypothesis-test-on-effect-scale" class="level2">
 <h2 class="anchored" data-anchor-id="critical-value-of-hypothesis-test-on-effect-scale">Critical value of hypothesis test on effect scale</h2>
 <p>The MDD is, simply speaking, the critical value of the hypothesis test on the scale of the effect size of interest. So, to find the answer to our question above we simply have to solve <span class="math display">\[\begin{eqnarray*}
 \frac{\hat{\theta}}{\text{SE}(\hat{\theta})} &amp;=&amp; -q_{1 - \alpha / 2}
 \end{eqnarray*}\]</span> for <span class="math inline">\(\hat \theta\)</span>, giving us <span class="math display">\[\begin{eqnarray*}
-\hat \theta &amp;=&amp; \exp\Bigl(-q_{1 - \alpha / 2} \text{SE}(\hat{\theta})\Bigr).
-\end{eqnarray*}\]</span> Let us verify this:</p>
+\hat \theta &amp;=&amp; -q_{1 - \alpha / 2} \text{SE}(\hat{\theta})\Bigr.
+\end{eqnarray*}\]</span></p>
+<p>From this we get <span class="math inline">\(\widehat{\text{HR}} = \exp(\hat \theta)\)</span>. Let us verify this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute MDD as rescaled critical value of hypothesis test:</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">4</span> <span class="sc">/</span> nevent)</span>

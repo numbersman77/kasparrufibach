@@ -82,6 +82,8 @@ Note that we work on the log(HR) scale. This, because the estimate $\hat \theta 
 \hat{\theta} := \log(\widehat{\text{HR}}) &=& N(\theta, 4 / d).
 \end{eqnarray*}
 
+with $\theta$ the true underlying log hazard ratio and $\text{SE}(\hat{\theta}) = \sqrt{4 / d}$.
+
 ## Critical value of hypothesis test on effect scale
 
 The MDD is, simply speaking, the critical value of the hypothesis test on the scale of the effect size of interest. So, to find the answer to our question above we simply have to solve
@@ -90,9 +92,10 @@ The MDD is, simply speaking, the critical value of the hypothesis test on the sc
 \end{eqnarray*}
 for $\hat \theta$, giving us 
 \begin{eqnarray*}
-\hat \theta &=& \exp\Bigl(-q_{1 - \alpha / 2} \text{SE}(\hat{\theta})\Bigr).
+\hat \theta &=& -q_{1 - \alpha / 2} \text{SE}(\hat{\theta})\Bigr.
 \end{eqnarray*}
-Let us verify this:
+
+From this we get $\widehat{\text{HR}} = \exp(\hat \theta)$. Let us verify this:
 
 ```{r, include=TRUE, echo=TRUE}
 # compute MDD as rescaled critical value of hypothesis test:
