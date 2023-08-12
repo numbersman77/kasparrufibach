@@ -38,9 +38,8 @@ tab1[i3] <- paste(tab1, " [journal paper](", tab$doi, ") | ", sep = "")[i3]
 i4 <- (is.na(tab$arxiv) == FALSE)
 tab1[i4] <- paste(tab1, " [paper on arxiv](", tab$arxiv, ") | ", sep = "")[i4]
 
-tab2 <- data.frame(cbind(length(tab1):1, tab1))
+tab2 <- data.frame(cbind(length(tab1):1, tab$year, tab1))
 
-
-kable(tab2, col.names = c("", ""))
+kable(tab2, col.names = c("", "", ""))
 ```
 
