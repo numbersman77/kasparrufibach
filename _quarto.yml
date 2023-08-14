@@ -26,10 +26,10 @@ website:
       menu:
         - text: "Statistical methodological publications"  
           href: publications_stat.html
+        - text: "Biostatistical textbook"
+          href: textbook.html
         - text: "Biomedical publications"  
           href: publications_med.html
-    - text: "Textbook"
-      href: textbook.html
     - text: "Software"
       href: software.html
     - text: "Podcasts"
