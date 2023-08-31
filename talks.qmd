@@ -13,9 +13,7 @@ format: html
 tbl-colwidths: [7,20,30,10,23]
 ---
 
-# Status of this page
-
-This page is still under construction, I keep adding talks, mainly those for which I provide slides.
+# Comprehensive list of talks
 
 A pdf file listing all my talks can be [downloaded](files/03_Kaspar_Rufibach_talks.pdf).
 
