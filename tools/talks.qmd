@@ -8,8 +8,13 @@ tab <- filter(talks, Type == ut[j])
 ## `r paste(ut[j], sep = "")` {-} 
 
 ```{r echo = FALSE}
-tab2 <- data.frame(cbind(as.character(tab$Date), tab$Event, tab$Title, paste("[download slides](", tab$slides, ")", sep = "")))
+tab1 <- data.frame(cbind(as.character(tab$Date), tab$Event, tab$Title, paste("[slides](", tab$slides, ")", sep = "")), tab$comment)
+tab1[is.na(tab1[, 5]), 5] <- ""
 
-kable(tab2, col.names = rep("", ncol(tab2)))
+# video
+i11 <- (is.na(tab$video) == FALSE)
+tab1[i11, 4] <- paste(tab1[, 4], " | [video](", tab$video, ")", sep = "")[i11]
+
+kable(tab1, col.names = rep("", ncol(tab1)))
 ```
 

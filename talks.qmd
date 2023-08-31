@@ -10,7 +10,7 @@ output:
     toc_depth: 2
     toc_float: yes
 format: html
-tbl-colwidths: [7,20,50,13]
+tbl-colwidths: [7,20,30,10,23]
 ---
 
 # Status of this page
