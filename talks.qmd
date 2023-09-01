@@ -48,3 +48,8 @@ a <- knit(text = unlist(paste(out1, collapse = '\n')), quiet = TRUE)
 ```{r conferences, echo = FALSE, message = FALSE, warning = FALSE, results = "asis"}
 cat(a)
 ```
+
+
+
+
+
