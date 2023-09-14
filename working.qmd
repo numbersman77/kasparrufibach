@@ -14,6 +14,10 @@ output:
 
 I am a member of the [board](https://baselbiometrics.github.io/home/docs/board.html) of the [Basel Biometrics Section (BBS)](http://www.bbsbasel.ch) and also regularly organize events for the BBS.
 
+# EFSPI statistical methodology leaders
+
+Together with Cornelia Kunz from Boehringer Ingelheim and Mouna Akacha from Novartis I have initiated the EFSPI statistical methodology leaders group. Find more details [here](https://efspieurope.github.io/efspi/methods/methods_intro.html).
+
 # NIHR-MRC Trials Methodology Research Partnership (TMRP) Outcomes Working Group: Adverse Events - evaluating harm (lead of estimand workstream)
 
 See [here](http://www.methodologyhubs.mrc.ac.uk/about/working-groups/) for details.
