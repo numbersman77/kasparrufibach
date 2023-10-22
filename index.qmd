@@ -19,7 +19,7 @@ path <- getwd()
 up <- as.data.frame(read_excel(paste(path, "/data/update.xlsx", sep = ""), col_types = NULL))[1, 1]
 ```
 
-# About ss
+# About
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
