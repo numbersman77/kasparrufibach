@@ -14,6 +14,7 @@ project:
     - roche_ds.qmd
     - podcasts.qmd
     - code/
+    - kpt2024.qmd
     
 website:
   title: "Kaspar Rufibach, biostatistician"
