@@ -2,7 +2,7 @@
 # how to do this with child documents: https://gist.github.com/rmoff/a043676a2f084b81a434
 
 j <- as.numeric('{{j}}')
-tab <- filter(talks, Type == ut[j])
+tab <- talks[talks$Type == ut[j], ]
 ```
 
 ## `r paste(ut[j], sep = "")` {-} 
@@ -15,6 +15,6 @@ tab1[is.na(tab1[, 5]), 5] <- ""
 i11 <- (is.na(tab$video) == FALSE)
 tab1[i11, 4] <- paste(tab1[, 4], " | [video](", tab$video, ")", sep = "")[i11]
 
-kable(tab1, col.names = rep("", ncol(tab1)))
+kable(tab1, col.names = c("Date", "Event", "Title", "Material", "Comment"))
 ```
 
