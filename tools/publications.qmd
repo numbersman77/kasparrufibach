@@ -29,9 +29,9 @@ tab1[i1] <- paste(tab1, ".", sep = "")[i1]
 i3 <- (is.na(tab$doi) == FALSE)
 tab1[i3] <- paste(tab1, " [doi](", tab$doi, ") | ", sep = "")[i3]
 
-# arxiv
-i4 <- (is.na(tab$arxiv) == FALSE)
-tab1[i4] <- paste(tab1, " [arxiv](", tab$arxiv, ") | ", sep = "")[i4]
+# preprint
+i4 <- (is.na(tab$preprint) == FALSE)
+tab1[i4] <- paste(tab1, " [preprint](", tab$preprint, ") | ", sep = "")[i4]
 
 # markdown
 i5 <- (is.na(tab$markdown) == FALSE)
