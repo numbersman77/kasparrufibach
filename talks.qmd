@@ -19,6 +19,8 @@ A pdf file listing all my talks can be [downloaded](files/03_Kaspar_Rufibach_tal
 
 # Talks for download
 
+::: {.panel-tabset .nav-pills}
+
 ```{r setup, include = FALSE, echo = FALSE}
 ## load packages
 packs.html <- c("knitr", "pander", "reporttools", "dplyr", "readxl")
@@ -49,7 +51,7 @@ a <- knit(text = unlist(paste(out1, collapse = '\n')), quiet = TRUE)
 cat(a)
 ```
 
-
+:::
 
 
 

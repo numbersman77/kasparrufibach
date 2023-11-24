@@ -22,6 +22,8 @@ path <- getwd()
 pubs <- as.data.frame(read_excel(paste(path, "/data/publications.xlsx", sep = ""), col_types = NULL))
 ```
 
+::: {.panel-tabset .nav-pills}
+
 ```{r echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
 # how to do this with child documents: https://gist.github.com/rmoff/a043676a2f084b81a434
 out1 <- NULL
@@ -41,3 +43,4 @@ a <- knit(text = unlist(paste(out1, collapse = '\n')), quiet = TRUE)
 cat(a)
 ```
 
+:::

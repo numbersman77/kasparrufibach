@@ -10,6 +10,8 @@ output:
     toc_float: yes
 ---
 
+::: {.panel-tabset .nav-pills}
+
 # Basel Biometrics Section
 
 I am a member of the [board](https://baselbiometrics.github.io/home/docs/board.html) of the [Basel Biometrics Section (BBS)](http://www.bbsbasel.ch) and also regularly organize events for the BBS.
@@ -40,3 +42,4 @@ Roche has contributed data from three clinical trials to this project. I coordin
 
 I co-founded and co-lead this group. Find more details [here](www.oncoestimand.org).
 
+:::

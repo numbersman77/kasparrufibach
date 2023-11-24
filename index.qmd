@@ -19,6 +19,8 @@ path <- getwd()
 up <- as.data.frame(read_excel(paste(path, "/data/update.xlsx", sep = ""), col_types = NULL))[1, 1]
 ```
 
+::: {.panel-tabset .nav-pills}
+
 # About
 
 <style type="text/css">
@@ -67,6 +69,4 @@ I am an [Accredited European Statistician](files/Accreditation_FENStat.pdf), a q
 - PhD in Mathematics ([dissertation](https://biblio.unibe.ch/download/eldiss/06rufibach_k.pdf)), 2006, [University of Bern](https://www.imsv.unibe.ch/), Switzerland
 - MSc in Mathematical Statistics and Actuarial Science, 2001, [University of Bern](https://www.imsv.unibe.ch/), Switzerland
 
-
-
-
+:::
