@@ -18,9 +18,13 @@ tab1 <- paste(tab$First, " (**", tab$Year, "**). ", tab$Title, ". _", tab$Journa
 i0 <- (tab$Status == "ta")
 tab1[i0] <- paste(tab1, ", to appear.", sep = "")[i0]
 
-# papers with reference
-i2 <- ((tab$Status %in% c("s", "ta")) == FALSE)
+# papers with reference and Volume
+i2 <- ((tab$Status %in% c("s", "ta")) == FALSE & is.na(tab$Volume) == FALSE)
 tab1[i2] <- paste(tab1, ", **", tab$Issue, "**(", tab$Volume, "), ", tab$Pages, ". ", sep = "")[i2]
+
+# papers with reference and no volume
+i2b <- ((tab$Status %in% c("s", "ta")) == FALSE & is.na(tab$Volume) == TRUE)
+tab1[i2b] <- paste(tab1, ", **", tab$Issue, "**:", tab$Pages, ". ", sep = "")[i2b]
 
 # add full stop to submitted papers
 tab1[i1] <- paste(tab1, ".", sep = "")[i1]
