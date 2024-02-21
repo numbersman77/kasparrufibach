@@ -35,7 +35,7 @@ Roche has contributed data from three clinical trials to this project. I coordin
 - [Statistical Analysis Plan of SAVVY project](https://doi.org/10.1002/bimj.201900347)
 - [Estimation of AE risks](https://doi.org/10.1186/s13063-021-05354-x)
 - [Comparison of AE risk in a two-arm RCT](https://doi.org/10.1080/19466315.2022.2144944)
-- [markdown](https://numbersman77.github.io/savvy/code.html) | [github](https://github.com/numbersman77/AEprobs)
+- [R package](https://cran.r-project.org/package=savvyr) | [github](https://openpharma.github.io/savvyr/)
 - [Estimating and comparing adverse event probabilities in the presence of varying follow-up times and competing events](https://doi.org/10.1002/pst.2130)
 
 # Oncology estimand working group
