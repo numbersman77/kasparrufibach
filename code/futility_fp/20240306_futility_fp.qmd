@@ -1,5 +1,5 @@
 ---
-title: "False-positive risk when adding a futility interim analysis to a clinical trial"
+title: "False-positive risk (power loss) when adding a futility interim analysis to a clinical trial"
 author: "Kaspar Rufibach, 6th March 2024"
 execute:
   freeze: auto  # re-render only when source changes
@@ -33,11 +33,11 @@ colFmt <- function(x, color = 'red'){
 
 # Purpose of this document
 
-This R markdown file accompanies this [linkedin post](https://www.linkedin.com/posts/kasparrufibach_here-is-a-question-for-anyone-working-on-activity-7094488116748529664-9TYr?utm_source=share&utm_medium=member_desktop), provides the code to reproduce computations, and much more. I also talked about this topic at the first 2024 [effective statistician conference](https://theeffectivestatistician.com/welcome-to-the-effective-statistician-conference-2024/), find my slides [here](https://numbersman77.github.io/kasparrufibach/files/talks/20240215_Rufibach_Futility.pdf)
+This R markdown file accompanies this [linkedin post](https://www.linkedin.com/feed/update/urn:li:activity:7171170319980871680/), provides the code to reproduce computations, and much more. I also talked about this topic at the first 2024 [effective statistician conference](https://theeffectivestatistician.com/welcome-to-the-effective-statistician-conference-2024/), find my slides [here](https://numbersman77.github.io/kasparrufibach/files/talks/20240215_Rufibach_Futility.pdf)
 
 # Acknowldegments
 
-I talk(ed) a lot about this broad topic with Marcel Wolbers, Jenny Devenport, Gian Thanei, Jianmei Wang, Gaelle Klingelschmitt, Uli Burger, and many others.
+I talk(ed) a lot about this broad topic with my Roche colleagues Marcel Wolbers, Jenny Devenport, Gian Thanei, Jianmei Wang, Gaelle Klingelschmitt, Uli Burger, and many others.
 
 # Setup and definition of functions
 

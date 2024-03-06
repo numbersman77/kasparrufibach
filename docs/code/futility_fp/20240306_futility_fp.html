@@ -8,7 +8,7 @@
 
 <meta name="author" content="Kaspar Rufibach, 6th March 2024">
 
-<title>Kaspar Rufibach, biostatistician - False-positive risk when adding a futility interim analysis to a clinical trial</title>
+<title>Kaspar Rufibach, biostatistician - False-positive risk (power loss) when adding a futility interim analysis to a clinical trial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -184,6 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#purpose-of-this-document" id="toc-purpose-of-this-document" class="nav-link active" data-scroll-target="#purpose-of-this-document">Purpose of this document</a></li>
+  <li><a href="#acknowldegments" id="toc-acknowldegments" class="nav-link" data-scroll-target="#acknowldegments">Acknowldegments</a></li>
   <li><a href="#setup-and-definition-of-functions" id="toc-setup-and-definition-of-functions" class="nav-link" data-scroll-target="#setup-and-definition-of-functions">Setup and definition of functions</a></li>
   <li><a href="#trial-design" id="toc-trial-design" class="nav-link" data-scroll-target="#trial-design">Trial design</a></li>
   <li><a href="#simulation-of-trials-with-and-without-futility-interim-analysis" id="toc-simulation-of-trials-with-and-without-futility-interim-analysis" class="nav-link" data-scroll-target="#simulation-of-trials-with-and-without-futility-interim-analysis">Simulation of trials with and without futility interim analysis</a></li>
@@ -196,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">False-positive risk when adding a futility interim analysis to a clinical trial</h1>
+<h1 class="title">False-positive risk (power loss) when adding a futility interim analysis to a clinical trial</h1>
 </div>
 
 
@@ -219,7 +220,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="purpose-of-this-document" class="level1">
 <h1>Purpose of this document</h1>
-<p>This R markdown file accompanies this <a href="https://www.linkedin.com/posts/kasparrufibach_here-is-a-question-for-anyone-working-on-activity-7094488116748529664-9TYr?utm_source=share&amp;utm_medium=member_desktop">linkedin post</a>, provides the code to reproduce computations, and much more. I also talked about this topic at the first 2024 <a href="https://theeffectivestatistician.com/welcome-to-the-effective-statistician-conference-2024/">effective statistician conference</a>, find my slides <a href="https://numbersman77.github.io/kasparrufibach/files/talks/20240215_Rufibach_Futility.pdf">here</a></p>
+<p>This R markdown file accompanies this <a href="https://www.linkedin.com/feed/update/urn:li:activity:7171170319980871680/">linkedin post</a>, provides the code to reproduce computations, and much more. I also talked about this topic at the first 2024 <a href="https://theeffectivestatistician.com/welcome-to-the-effective-statistician-conference-2024/">effective statistician conference</a>, find my slides <a href="https://numbersman77.github.io/kasparrufibach/files/talks/20240215_Rufibach_Futility.pdf">here</a></p>
+</section>
+<section id="acknowldegments" class="level1">
+<h1>Acknowldegments</h1>
+<p>I talk(ed) a lot about this broad topic with my Roche colleagues Marcel Wolbers, Jenny Devenport, Gian Thanei, Jianmei Wang, Gaelle Klingelschmitt, Uli Burger, and many others.</p>
 </section>
 <section id="setup-and-definition-of-functions" class="level1">
 <h1>Setup and definition of functions</h1>
@@ -491,7 +496,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="quantification-of-power-loss-of-interim-analysis-and-graphical-illustration" class="level1">
 <h1>Quantification of power loss of interim analysis, and graphical illustration</h1>
-<p>We have now 1000 simulated trials with a hazard ratio estimate at the interim and final analysis. First, let us plot results assuming there would be no interim analysis. The horizontal lines correspond to the futility boundary, the minimal detectable difference (i.e.&nbsp;the hazard ratio we need to observe at the final analysis to be statistically significant), and the hazard ratio for which we specified the sample size to have 80% power at. They grey lines illustrate the hazard ratios we observe at the final analysis using these assumptions, with green lines those trials that would be statistically significant, i.e.&nbsp;land below the red horizontal line. These are 81.5% of trials (an estimate of the power).</p>
+<p>We have now 1000 simulated trials with a hazard ratio estimate at the interim and final analysis. First, let us plot results assuming there would be no interim analysis. The horizontal lines correspond to the futility boundary, the minimal detectable difference (i.e.&nbsp;the hazard ratio we need to observe at the final analysis to be statistically significant), and the hazard ratio for which we specified the sample size to have 80% power at. They grey lines illustrate the hazard ratios we observe at the final analysis using these assumptions, with green lines those trials that would be statistically significant, i.e.&nbsp;land below the red horizontal line. These are 78.1% of trials (an estimate of the power).</p>
 <div class="cell" data-layout-align="center">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -511,7 +516,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </div>
-<p>The plot above indicates those 2.0% of trials that would be erronously stopped at the futility interim analysis. This is what is typically called the <font color="red">power loss</font> of the futility interim analysis.</p>
+<p>The plot above indicates those 2.4% of trials that would be erronously stopped at the futility interim analysis. This is what is typically called the <font color="red">power loss</font> of the futility interim analysis.</p>
 
 
 </section>
