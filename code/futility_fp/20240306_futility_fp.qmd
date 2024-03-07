@@ -29,6 +29,8 @@ colFmt <- function(x, color = 'red'){
   else
     x
 }
+
+set.seed(23041977)
 ```
 
 # Purpose of this document
@@ -335,12 +337,12 @@ inter_x <- cutoff / max(cutoff)
 axis(side = 1, at = inter_x[1], labels = c("interim", "final")[1])
 
 # all trajectories including interim
-segments(0, 1, inter_x[1], resHR[, 1], col = grey(0.9), lty = 1)
+segments(0, hr, inter_x[1], resHR[, 1], col = grey(0.9), lty = 1)
 segments(inter_x[1], resHR[, 1], 1, resHR[, 2], col = grey(0.9), lty = 1)
 
 # color the false negatives: stopped at interim but sig at final
 ind <- (resHR[, 1] > 1 & resHR[, 2] <= mdd_no_interim)
-segments(0, 1, inter_x[1], resHR[ind, 1], col = 3, lty = 1)
+segments(0, hr, inter_x[1], resHR[ind, 1], col = 3, lty = 1)
 segments(inter_x[1], resHR[ind, 1], 1, resHR[ind, 2], col = 3, lty = 1)
 
 horiz(vert = TRUE)
