@@ -30,7 +30,7 @@ colFmt <- function(x, color = 'red'){
     x
 }
 
-set.seed(23041977)
+set.seed(2024)
 ```
 
 # Purpose of this document
