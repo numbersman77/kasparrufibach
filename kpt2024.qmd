@@ -4,6 +4,8 @@ author:
 - name: Kaspar Rufibach
   affiliation: Meiringen
 date-modified: last-modified
+execute:   
+  freeze: auto  # re-render only when source changes
 output: 
   rmarkdown::html_document:
     highlight: pygments

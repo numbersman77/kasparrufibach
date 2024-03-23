@@ -2,6 +2,8 @@
 title: ""
 author: "Kaspar Rufibach, Methods, Collaboration and Outreach Group, Roche PD DSS"
 date: "Last change: `r format(Sys.time(), '%d %B, %Y')`"
+execute:   
+  freeze: auto  # re-render only when source changes
 output: 
   rmarkdown::html_document:
     highlight: pygments
