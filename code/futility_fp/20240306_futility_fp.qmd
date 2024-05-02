@@ -1,6 +1,6 @@
 ---
 title: "False-positive risk (power loss) when adding a futility interim analysis to a clinical trial"
-author: "Kaspar Rufibach, 6th March 2024"
+author: "Kaspar Rufibach, 2nd May 2024"
 execute:
   freeze: auto  # re-render only when source changes
 output: 
