@@ -314,7 +314,7 @@ for (i in 1:M){
 
 We have now `r M` simulated trials with a hazard ratio estimate at the interim and final analysis. First, let us plot results assuming there would be no interim analysis. The horizontal lines correspond to the futility boundary, the minimal detectable difference (i.e. the hazard ratio we need to observe at the final analysis to be statistically significant), and the hazard ratio for which we specified the sample size to have 80% power at. They grey lines illustrate the hazard ratios we observe at the final analysis using these assumptions, with green lines those trials that would be statistically significant, i.e. land below the red horizontal line. These are `r disp(sum(resHR[, 2] <= mdd_no_interim) / M * 100, 1)`% of trials (an estimate of the power).
 
-```{r, echo = FALSE, results = 'asis', message = FALSE, fig.cap = "", fig.align = "center", fig.width = 7, fig.height = 5.5}
+```{r, echo = TRUE, results = 'asis', message = FALSE, fig.cap = "", fig.align = "center", fig.width = 7, fig.height = 5.5}
 plot_empty()
 
 # plot trajectories to final only
@@ -331,7 +331,7 @@ Now, we know that by adding a futility interim we reduce trial power, because we
 - the hazard ratio at the interim analysis is above 1 (i.e. the interim boundary for futility) but
 - below `r disp(mdd_no_interim, 3)`, i.e. the minimal detectable difference at the final analysis.
 
-```{r, echo = FALSE, results = 'asis', message = FALSE, fig.cap = "", fig.align = "center", fig.width = 7, fig.height = 5.5}
+```{r, echo = TRUE, results = 'asis', message = FALSE, fig.cap = "", fig.align = "center", fig.width = 7, fig.height = 5.5}
 plot_empty()
 inter_x <- cutoff / max(cutoff)
 axis(side = 1, at = inter_x[1], labels = c("interim", "final")[1])

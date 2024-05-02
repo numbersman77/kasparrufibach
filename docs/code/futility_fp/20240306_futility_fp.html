@@ -498,6 +498,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Quantification of power loss of interim analysis, and graphical illustration</h1>
 <p>We have now 1000 simulated trials with a hazard ratio estimate at the interim and final analysis. First, let us plot results assuming there would be no interim analysis. The horizontal lines correspond to the futility boundary, the minimal detectable difference (i.e.&nbsp;the hazard ratio we need to observe at the final analysis to be statistically significant), and the hazard ratio for which we specified the sample size to have 80% power at. They grey lines illustrate the hazard ratios we observe at the final analysis using these assumptions, with green lines those trials that would be statistically significant, i.e.&nbsp;land below the red horizontal line. These are 79.9% of trials (an estimate of the power).</p>
 <div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_empty</span>()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># plot trajectories to final only</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">0</span>, hr, <span class="dv">1</span>, resHR[, <span class="dv">2</span>], <span class="at">col =</span> <span class="fu">grey</span>(<span class="fl">0.9</span>), <span class="at">lty =</span> <span class="dv">1</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># significant trajectories</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">0</span>, hr, <span class="dv">1</span>, resHR[resHR[, <span class="dv">2</span>] <span class="sc">&lt;=</span> mdd_no_interim, <span class="dv">2</span>], <span class="at">col =</span> <span class="dv">3</span>, <span class="at">lty =</span> <span class="dv">1</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">horiz</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="20240306_futility_fp_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
@@ -510,6 +519,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>below 0.818, i.e.&nbsp;the minimal detectable difference at the final analysis.</li>
 </ul>
 <div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_empty</span>()</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>inter_x <span class="ot">&lt;-</span> cutoff <span class="sc">/</span> <span class="fu">max</span>(cutoff)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="at">side =</span> <span class="dv">1</span>, <span class="at">at =</span> inter_x[<span class="dv">1</span>], <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"interim"</span>, <span class="st">"final"</span>)[<span class="dv">1</span>])</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># all trajectories including interim</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">0</span>, hr, inter_x[<span class="dv">1</span>], resHR[, <span class="dv">1</span>], <span class="at">col =</span> <span class="fu">grey</span>(<span class="fl">0.9</span>), <span class="at">lty =</span> <span class="dv">1</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(inter_x[<span class="dv">1</span>], resHR[, <span class="dv">1</span>], <span class="dv">1</span>, resHR[, <span class="dv">2</span>], <span class="at">col =</span> <span class="fu">grey</span>(<span class="fl">0.9</span>), <span class="at">lty =</span> <span class="dv">1</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># color the false negatives: stopped at interim but sig at final</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>ind <span class="ot">&lt;-</span> (resHR[, <span class="dv">1</span>] <span class="sc">&gt;</span> <span class="dv">1</span> <span class="sc">&amp;</span> resHR[, <span class="dv">2</span>] <span class="sc">&lt;=</span> mdd_no_interim)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">0</span>, hr, inter_x[<span class="dv">1</span>], resHR[ind, <span class="dv">1</span>], <span class="at">col =</span> <span class="dv">3</span>, <span class="at">lty =</span> <span class="dv">1</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(inter_x[<span class="dv">1</span>], resHR[ind, <span class="dv">1</span>], <span class="dv">1</span>, resHR[ind, <span class="dv">2</span>], <span class="at">col =</span> <span class="dv">3</span>, <span class="at">lty =</span> <span class="dv">1</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">horiz</span>(<span class="at">vert =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="20240306_futility_fp_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
