@@ -257,7 +257,7 @@ scale <- 1 / lambda
 
 # specification of interim analysis
 info_interim <- 0.3
-futilityHR <- 1
+futilityHR <- 0.9
 ```
 
 So we plan a trial assuming:
