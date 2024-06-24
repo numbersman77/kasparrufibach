@@ -47,4 +47,4 @@ Meanwhile, a pdf file listing all my talks can be [downloaded](files/04_Kaspar_R
 <br>
 <br>
 
-[.](files/courses/T2E_clinTrials_Exercises_Soxutions.qmd)
+[.](files/courses/T2E_clinTrials_Exercises_Solutions.qmd)
