@@ -17,28 +17,8 @@ output:
 
 The German and Austrian-Swiss Region of the International Biometric Society together with the Austrian Statistical Society, the Intelligent Data Analytics Lab and the Research Center Trustworthy Data Science and Security (both Uni Salzburg) jointly organize a
 
-*Summer School on Time-to-Event-Analysis*
-
-in Strobl, Lake Wolfgang (Wolfgangsee).
-
-Topics will range from practice-oriented to methodological and, e.g., cover 
-
-- an introduction to time-to-event-analysis, 
-- clinical trials with time-to-event endpoints, 
-- logistic regression with right censored (survival) data, 
-and strategies to model survival data beyond proportional hazards model.
-
-Lectures will be given by four well-known authorities on time-to-event
-analysis and its application
-
-- *Paul Blanche* (København)
-- *Sarah Friedrich* (Augsburg)
-- *Kaspar Rufibach* (Basel)
-- *Helga Wagner* (Linz)
-
-and there will be plenty of room for informal discussions with the experts.
-
-[download flyer](files/announcements/20240629_Wolfgangsee.pdf)
+- [download flyer](files/announcements/20240629_Wolfgangsee.pdf)
+- [download exercises (use "save link as")](files/courses/T2E_clinTrials_Exercises.qmd)
 
 
 # Teaching and supervision

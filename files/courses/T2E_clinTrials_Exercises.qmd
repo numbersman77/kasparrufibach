@@ -1,0 +1,94 @@
+---
+title: "Clinical Trials with a Time-to-Event Endpoint: Final group challenge"
+author: "Kaspar Rufibach"
+date: "Last change: `r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  rmarkdown::html_document:
+    highlight: pygments
+    number_sections: yes
+    self_contained: yes
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+---
+
+# Getting started{-}
+
+- Download the raw R quarto file [here]().
+- Start up Rstudio. Then open the R quarto exercise file.
+- Make sure that you have rpact version $\geq 3.5.1$ installed.
+- Load the rpact package by executing the code below in R.
+- Start answering the questions below by adding your own R code. Use the rpact vignettes [here](https://rpact.org/vignettes/planning/rpact_survival_planning_example/)  and [here](https://rpact.org/vignettes/planning/rpact_survival_examples/) for guidance.
+
+$\Rightarrow$ **Good Luck!**
+
+# Load rpact package {-}
+```{r, include=TRUE, echo=TRUE}
+# Load rpact
+library(rpact)
+packageVersion("rpact") 
+library(knitr)
+```
+
+
+# Trial with time-to-event endpoint
+
+## The trial
+
+A phase III, randomized, multicenter, open-label, two-arm study designed to evaluate treatment A versus B. 
+
+The **general assumptions for the sample size assessment** are:
+
+- Randomization in a 2:1 ratio.
+- The dropout rate is 5% for arm A and 10% for arm B.
+- The recruitment of approximately 250 patients will take place over 5 months. 
+
+The following additional assumptions are made:
+
+- Exponentially distributed PFS in the control arm with a median of 4 months.
+- Median PFS improvement vs. control of 3.3 months (medians 7.3 vs. 4 months, i.e. a HR of approximately 0.55). 
+- Log-rank test at a two-sided significance level of 0.05, power 80%.
+
+Based on these assumptions, compute the following quantities:
+
+- Number of events required to reach the targeted power.
+- The MDD.
+- The clinical cutoff date for the primary analysis.
+
+## Questions and solutions
+
+*a) Verify the sample size calculation.*
+
+**Solution:**
+```{r, include=TRUE, echo=TRUE}
+# add your R-code to answer the question here.
+
+sampleSize <- getSampleSizeSurvival(sided = 2,alpha = 0.05, beta = 0.2, 
+    allocationRatioPlanned = 2,    # 2:1 randomization
+    lambda2 = getLambdaByMedian(4), lambda1 = getLambdaByMedian(7.3),
+    dropoutRate1 = 0.05, dropoutRate2 = 0.10, dropoutTime = 12,
+    accrualTime = 0:5, 
+    accrualIntensity = rep(50, 5),
+    maxNumberOfSubjects = 250)
+summary(sampleSize)
+```
+
+*b) How many events would be expected to occur until exactly 2 and 4 months, respectively, from first patient randomized? (Use function `getEventProbabilities`.)*
+
+**Solution:**
+```{r, include=TRUE, echo=TRUE}
+# add your R-code to answer the question here.
+
+# Probability of an event until 2 months and 4 months  
+prob <- getEventProbabilities(time = c(2, 4), 
+    allocationRatioPlanned = 2,    # 2:1 randomization
+    lambda2 = getLambdaByMedian(4), lambda1 = getLambdaByMedian(7.3),
+    dropoutRate1 = 0.05, dropoutRate2 = 0.10, dropoutTime = 12,
+    accrualTime = 0:5,
+    accrualIntensity = rep(50, 5),
+    maxNumberOfSubjects = 250)
+prob
+
+# Expected number of events (for n = 250)
+250 * prob$overallEventProbabilities
+```
