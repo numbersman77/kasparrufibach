@@ -17,8 +17,8 @@ output:
 
 The German and Austrian-Swiss Region of the International Biometric Society together with the Austrian Statistical Society, the Intelligent Data Analytics Lab and the Research Center Trustworthy Data Science and Security (both Uni Salzburg) jointly organize a
 
-- [download flyer](files/announcements/20240629_Wolfgangsee.pdf)
-- [download exercises (use "save link as")](files/courses/T2E_clinTrials_Exercises.qmd)
+- [download flyer](files/courses/20240629_Wolfgangsee.pdf)
+- [download exercises](files/courses/T2E_clinTrials_Exercises.qmd)
 
 
 # Teaching and supervision
