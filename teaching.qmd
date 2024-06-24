@@ -15,7 +15,7 @@ output:
 
 # Upcoming courses
 
-The German and Austrian-Swiss Region of the International Biometric Society together with the Austrian Statistical Society, the Intelligent Data Analytics Lab and the Research Center Trustworthy Data Science and Security (both Uni Salzburg) jointly organize a
+The German and Austrian-Swiss Region of the International Biometric Society together with the Austrian Statistical Society, the Intelligent Data Analytics Lab and the Research Center Trustworthy Data Science and Security (both Uni Salzburg) jointly organize a summer school in Strobl / Austria. The target audience are colleagues interested in planning and analyzing clinical trials with time-to-event endpoints.
 
 - [download flyer](files/courses/20240629_Wolfgangsee.pdf)
 - [download exercises](files/courses/T2E_clinTrials_Exercises.qmd)
