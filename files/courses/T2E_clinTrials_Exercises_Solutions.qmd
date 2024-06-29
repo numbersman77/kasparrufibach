@@ -40,7 +40,7 @@ A phase III, randomized, multicenter, open-label, two-arm study designed to eval
 The **general assumptions for the sample size assessment** are:
 
 - Randomization in a 2:1 ratio.
-- The dropout rate is 5% for arm A and 10% for arm B.
+- The dropout rate is 5% for arm A and 10% for arm B, both at 12 months.
 - The recruitment of approximately 250 patients will take place over 5 months. 
 
 The following additional assumptions are made:
