@@ -280,10 +280,14 @@ Attache Paket: 'knitr'</code></pre>
 </ul>
 </section>
 </section>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected number of events (for n = 250)</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dv">250</span> <span class="sc">*</span> prob<span class="sc">$</span>overallEventProbabilities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected number of events (with number of recruited patients at each timepoint)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span> <span class="sc">*</span> prob<span class="sc">$</span>overallEventProbabilities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 11.06591 40.66301</code></pre>
+<pre><code>[1]  4.426364 16.265206</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dv">200</span> <span class="sc">*</span> prob<span class="sc">$</span>overallEventProbabilities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  8.852729 32.530412</code></pre>
 </div>
 </div>
 </section>
