@@ -49,15 +49,13 @@ The following additional assumptions are made:
 - Median PFS improvement vs. control of 3.3 months (medians 7.3 vs. 4 months, i.e. a HR of approximately 0.55). 
 - Log-rank test at a two-sided significance level of 0.05, power 80%.
 
-Based on these assumptions, compute the following quantities:
-
-- Number of events required to reach the targeted power.
-- The MDD.
-- The clinical cutoff date for the primary analysis.
-
 ## Questions and solutions
 
-*a) Verify the sample size calculation.*
+*a) Based on these assumptions, compute the following quantities:*
+
+- *Number of events required to reach the targeted power.*
+- *The MDD.*
+- *The clinical cutoff date for the primary analysis.*
 
 **Solution:**
 ```{r, include=TRUE, echo=TRUE}
