@@ -21,7 +21,7 @@ S3 <- 1 - pexp(xs, rate = lam3)
 S4 <- 1 - pexp(xs, rate = lam4)
 
 # plot survival functions by biomarkers subgroup and treatment
-par(mfrow = c(1, 3), las = 1, cex = 1)
+par(mfrow = c(1, 3), las = 1, cex = 1.3)
 plot(0, 0, type = "n", xlim = c(0, 60), ylim = c(0, 1), xlab = "time", ylab = "event-free probability", main = "survival functions in biomarkers subgroups")
 
 lines(xs, S1, type = "l", col = 2, lty = 3, lwd = 3)
@@ -30,8 +30,8 @@ lines(xs, S2, type = "l", col = 3, lty = 3, lwd = 3)
 lines(xs, S3, type = "l", col = 2, lty = 1, lwd = 3)
 lines(xs, S4, type = "l", col = 3, lty = 1, lwd = 3)
 
-legend("topleft", c("bio-, control", "bio-, treatment", "bio+, control", "bio+, treatment"), bty = "n", 
-       col = c(2, 3, 2, 3), lty = c(3, 3, 1, 1), seg.len = 1, lwd = 3)
+legend(-20, 1, c("bio-, control", "bio-, treatment", "bio+, control", "bio+, treatment"), bty = "n", 
+       col = c(2, 3, 2, 3), lty = c(3, 3, 1, 1), seg.len = 0.5, lwd = 3, x.intersp = 0.1)
 
 # marginal survival functions
 p <- 1 / 2
