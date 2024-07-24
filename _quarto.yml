@@ -43,9 +43,7 @@ website:
       href: working.html
     - text: "Posts"
       href: posts.html
-    - text: "Data science at Roche"
-      href: roche_ds.html
-
+      
 format:
   html:
     theme: cosmo
