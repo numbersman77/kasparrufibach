@@ -12,7 +12,7 @@ output:
     toc_float: yes
 ---
 
-::: {.panel-tabset .nav-pills}
+<!-- ::: {.panel-tabset .nav-pills} -->
 
 # Basel Biometrics Section
 
@@ -22,9 +22,9 @@ I am a member of the [board](https://baselbiometrics.github.io/home/docs/board.h
 
 Together with Cornelia Kunz from Boehringer Ingelheim and Mouna Akacha from Novartis I have initiated the EFSPI statistical methodology leaders group. Find more details [here](https://efspieurope.github.io/efspi/methods/methods_intro.html).
 
-# NIHR-MRC Trials Methodology Research Partnership (TMRP) Outcomes Working Group: Adverse Events - evaluating harm (lead of estimand workstream)
+# Oncology estimand working group
 
-See [here](http://www.methodologyhubs.mrc.ac.uk/about/working-groups/) for details.
+I co-founded and co-lead this group. Find more details [here](www.oncoestimand.org).
 
 # SAVVY: Survival analysis for AdVerse events with VarYing follow-up times
 
@@ -40,8 +40,8 @@ Roche has contributed data from three clinical trials to this project. I coordin
 - [R package](https://cran.r-project.org/package=savvyr) | [github](https://openpharma.github.io/savvyr/)
 - [Estimating and comparing adverse event probabilities in the presence of varying follow-up times and competing events](https://doi.org/10.1002/pst.2130)
 
-# Oncology estimand working group
+# NIHR-MRC Trials Methodology Research Partnership (TMRP) Outcomes Working Group: Adverse Events - evaluating harm (lead of estimand workstream)
 
-I co-founded and co-lead this group. Find more details [here](www.oncoestimand.org).
+See [here](http://www.methodologyhubs.mrc.ac.uk/about/working-groups/) for details.
 
-:::
+<!-- ::: -->

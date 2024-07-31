@@ -21,8 +21,6 @@ website:
   navbar:
     background: info
     left:
-    - text: "Home"
-      href: index.html
     - text: "Publications"
       menu:
         - text: "Statistical methodological publications"  
