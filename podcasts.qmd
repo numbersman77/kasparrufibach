@@ -23,6 +23,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## read in data
 path <- getwd()
 podcasts <- as.data.frame(read_excel(paste(path, "/data/podcasts.xlsx", sep = ""), col_types = NULL))
+podcasts[is.na(podcasts[, "Co-presenter"]), "Co-presenter"] <- ""
 ```
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
