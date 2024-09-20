@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "kpt2024.html",
-    "href": "kpt2024.html",
-    "title": "Tatsächliche Kosten in Abhängigkeit der Arztkosten",
+    "objectID": "conference.html",
+    "href": "conference.html",
+    "title": "ISCB 2025 in Basel",
     "section": "",
-    "text": "Rohdaten\nKPT Prämien für Hausarztmodell für 2024. KPT scheint die Franchise Sfr 2000 nicht anzubieten.\n\n\n\n\n\nFranchise\nMonatsprämie\nJahresprämie\n\n\n\n\n300\n431\n5172\n\n\n500\n420\n5040\n\n\n1000\n393\n4716\n\n\n1500\n366\n4392\n\n\n2000\nNA\nNA\n\n\n2500\n311\n3732\n\n\n\n\n\n\n\nAusgaben in Abhängigkeit der Arztkosten\nDie Grafik unten zeigt:\n\n\\(x\\)-Achse: die verursachten Arzt- und Spitalkosten.\n\\(y\\)-Achse: die tatsächlich zu bezahlenden Kosten, für jede Franchise.\n\n\n\n\n\n\n\n\n\n\n\n\nLesebeispiel\nWenn ich pro Jahr 4000 Sfr Arztkosten verursache, dann habe ich die folgenden Ausgaben, abhängig von der Franchise:\n\n\n\n\n\n300\n500\n1000\n1500\n2000\n2500\n\n\n\n\n5842\n5890\n6016\n6142\nNA\n6382\n\n\n\n\n\nMit der höchsten Franchise ist für Kosten von Sfr 4000 mein maximales Risiko im Vergleich zur kleinsten Franchise 6382 - 5842 = 540. Solange meine Kosten aber unter Sfr 1900 bleiben fahre ich mit der höchsten Franchise in jedem Fall am besten.\nDas Maximum, das ich mit der höchsten Franchise mehr bezahle, erreiche ich ab Sfr 9500 Arztkosten und der Mehrbetrag ist 760.\n\n\nBerechnung\nFür Arztkosten \\(x\\) berechnen sich die Ausgaben gemäss\n\\[\n\\text{Jahresprämie} + \\begin{cases}x & x &lt; \\text{Franchise} \\\\ \\text{Franchise} + \\min\\{700; 0.1 \\cdot (x - \\text{Franchise})\\}& x \\ge \\text{Franchise}  \\end{cases}\n\\]"
+    "text": "I have contributed to and remain involved in the organization of several conferences in the past.\n\nISCB 2025 in Basel\nI co-lead the organizing committee for this conference together with Mouna Akacha from Novartis.\n\n\nEFSPI regulatory statistics workshop\nI lead the organizing committee for this workshop for three issues, 2020-2022.\nI have been a member of the scientific and local organizing committee from 2017-2019 and again since 2023.\n\n\nScientific committees\nI have been on the scientific committee for\n\nEFSPI regulatory statistics workshop (since 2017),\n67th Biometric Colloquium of the German Region of International Biometric Society in Münster 2021,\nISCB 2023 in Milan."
   },
   {
     "objectID": "code/futility_fp/20240306_futility_fp.html",

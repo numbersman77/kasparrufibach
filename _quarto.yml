@@ -14,7 +14,7 @@ project:
     - roche_ds.qmd
     - podcasts.qmd
     - code/
-    - kpt2024.qmd
+    - conference.qmd
     
 website:
   title: "Kaspar Rufibach, biostatistician"
@@ -39,6 +39,8 @@ website:
       href: teaching.html
     - text: "Working groups"
       href: working.html
+    - text: "Conference organization"
+      href: conference.html
     - text: "Posts"
       href: posts.html
       

@@ -1,0 +1,38 @@
+---
+title: ""
+execute:   
+  freeze: auto  # re-render only when source changes
+output: 
+  rmarkdown::html_document:
+    highlight: pygments
+    number_sections: yes
+    self_contained: yes
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+---
+
+<!-- ::: {.panel-tabset .nav-pills} -->
+
+I have contributed to and remain involved in the organization of several conferences in the past.
+
+# [ISCB 2025 in Basel](https://iscb2025.info/)
+
+I co-lead the organizing committee for this conference together with Mouna Akacha from Novartis.
+
+# [EFSPI regulatory statistics workshop](http://www.efspiworkshop.org)
+
+I lead the organizing committee for this workshop for three issues, 2020-2022.
+
+I have been a member of the scientific and local organizing committee from 2017-2019 and again since 2023.
+
+# Scientific committees
+
+I have been on the scientific committee for  
+
+- EFSPI regulatory statistics workshop (since 2017), 
+- 67th Biometric Colloquium of the German Region of International Biometric Society in Münster 2021,
+- ISCB 2023 in Milan.
+
+
+<!-- ::: -->
