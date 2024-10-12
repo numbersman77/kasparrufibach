@@ -28,7 +28,7 @@ soft <- as.data.frame(read_excel(paste(path, "/data/software.xlsx", sep = ""), c
 # how to do this with child documents: https://gist.github.com/rmoff/a043676a2f084b81a434
 out1 <- NULL
 ut <- unique(soft$type)
-ut <- c("R packages", "github repositories", "Code")
+ut <- c("R packages", "Code")
 
 for (j in 1:length(ut)){
     out1 <- c(out1, knit_expand('tools/software.qmd'))
