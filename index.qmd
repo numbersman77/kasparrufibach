@@ -48,12 +48,16 @@ up <- as.data.frame(read_excel(paste(path, "/data/update.xlsx", sep = ""), col_t
 
 I am a mathematical statistician. Through more than 20 years in various biostatistical roles I have complemented my thorough theoretical background with expertise in biostatistics. I am passionate about applying this expertise to solve problems in pharmaceutical drug development.
 
-I am an [Accredited European Statistician](files/Accreditation_FENStat.pdf), a qualification issued by [The Federation of European National Statistical Societies](https://fenstats.eu/).
-
 <a href="files/01_Kaspar_Rufibach_CV.pdf" class="btn btn-info"><i class="fa fa-download"></i> CV</a>
 <a href="files/02_Kaspar_Rufibach_publications.pdf" class="btn btn-info"><i class="fa fa-download"></i> Publications</a>
 <a href="files/03_Kaspar_Rufibach_talks.pdf" class="btn btn-info"><i class="fa fa-download"></i> Talks</a>
 <a href="files/04_Kaspar_Rufibach_teaching.pdf" class="btn btn-info"><i class="fa fa-download"></i> Teaching</a>
+
+I am an [Accredited European Statistician](files/Accreditation_FENStat.pdf), a qualification issued by [The Federation of European National Statistical Societies](https://fenstats.eu/).
+
+I co-lead the organizing committee of [ISCB46 2025 in Basel](https://iscb2025.info/), see [video](https://youtu.be/FkZtrsmV8Cg).
+
+I co-organize the yearly [EFSPI regulatory statistics workshop](http://www.efspiworkshop.org/). [Video](https://youtu.be/6sjAzRB_gi0) looking back on the 2024 and [video](https://youtu.be/lTBOa1-UGr8) looking forward to the 2025 10th anniversary edition.
 
 # Interests
 
