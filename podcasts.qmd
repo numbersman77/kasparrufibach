@@ -25,7 +25,7 @@ path <- getwd()
 podcasts <- as.data.frame(read_excel(paste(path, "/data/podcasts.xlsx", sep = ""), col_types = NULL))
 podcasts[is.na(podcasts[, "Co-presenter"]), "Co-presenter"] <- ""
 ```
-
+ 
 ```{r echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
 # how to do this with child documents: https://gist.github.com/rmoff/a043676a2f084b81a434
 out1 <- NULL
