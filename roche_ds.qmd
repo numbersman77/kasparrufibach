@@ -15,9 +15,6 @@ output:
 
 ```{r setup, include=FALSE}
 ## load packages
-packs.html <- c("knitr", "pander", "dplyr", "readxl", "ggplot2", "lubridate", "tidyr")
-for (i in 1:length(packs.html)){library(packs.html[i], character.only = TRUE)}
-
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
