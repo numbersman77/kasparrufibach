@@ -24,7 +24,7 @@ Together with Cornelia Kunz from Boehringer Ingelheim and Mouna Akacha from Nova
 
 # Oncology estimand working group
 
-I co-founded and co-lead this group. Find more details [here](www.oncoestimand.org).
+I co-founded and co-lead this group. Find more details [here](http://www.oncoestimand.org).
 
 # SAVVY: Survival analysis for AdVerse events with VarYing follow-up times
 
