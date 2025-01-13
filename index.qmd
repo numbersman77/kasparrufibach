@@ -73,4 +73,14 @@ I co-organize the yearly [EFSPI regulatory statistics workshop](http://www.efspi
 - PhD in Mathematics ([dissertation](https://biblio.unibe.ch/download/eldiss/06rufibach_k.pdf)), 2006, [University of Bern](https://www.imsv.unibe.ch/), Switzerland
 - MSc in Mathematical Statistics and Actuarial Science, 2001, [University of Bern](https://www.imsv.unibe.ch/), Switzerland
 
+# Short bio
+
+Kaspar Rufibach is a biostatistician who is passionate about supporting statisticians and drug developers to continuously challenge the status quo, with the aim of improving the drug development process, making it more efficient, and enabling access. 
+
+Kaspar has co-founded and co-leads the special interest group [Estimands in oncology](http://www.oncoestimand.org) which has (as of August 2024) more than 100 members from 50 institutions globally. He has also co-founded and co-leads the [EFSPI statistical methodology leader group](https://efspieurope.github.io/efspi/methods/methods_intro.html) which has 16 members from 16 companies. He regularly interacts with regulators globally on various joint projects.
+
+Kaspar’s research interests are methods to optimize study designs, platform trials, advanced survival analysis, probability of success, estimands and causal inference, and estimation of treatment effects in subgroups.
+
+Kaspar received training and worked as a statistician at the Universities of [Bern](https://www.imsv.unibe.ch/), [Stanford](https://statistics.stanford.edu/), and [Zurich](https://www.uzh.ch). During his PhD he gained some first experience in clinical research as a part-time statistician at the [Swiss Institute for Applied Cancer Research](https://www.sakk.ch/en). From 2012 until 2024 he worked at [Roche](https://www.roche.com) in Basel before joining [Merck KGaA](https://www.merckgroup.com/en) in October 2024 (100% home-based) to co-lead its Advanced Biostatistical Science group.
+
 :::
