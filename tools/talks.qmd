@@ -10,6 +10,7 @@ tab <- talks[talks$Type == ut[j], ]
 ```{r echo = FALSE}
 tab1 <- data.frame(cbind(as.character(tab$Date), tab$Event, tab$Title, paste("[slides](", tab$slides, ")", sep = "")), tab$comment)
 tab1[is.na(tab1[, 5]), 5] <- ""
+tab1[tab1[, 4] == "[slides](NA)", 4] <- ""
 
 # video
 i11 <- (is.na(tab$video) == FALSE)
