@@ -30,7 +30,7 @@ I co-founded and co-lead this group. Find more details [here](http://www.oncoest
 
 The SAVVY project is a consortium of academic and pharmaceutical industry partners that aims to improve the analyses of adverse event (AE) data in clinical trials through the use of survival techniques appropriately dealing with varying follow-up times and competing events. Although statistical methodologies have advanced, in AE analyses often the incidence proportion, the incidence density or a non-parametric Kaplan-Meier estimator are used, which either ignore censoring or competing events. In an empirical study including randomized clinical trials from several sponsor companies, these potential sources of bias are investigated. 
 
-Roche has contributed data from three clinical trials to this project. I coordinate the Roche efforts, am actively involved in writing papers within the project, and serve as a member of the SAVVY steering committee.
+I am actively involved in writing papers within the project, and serve as a member of the SAVVY steering committee.
 
 [SAVVY webpage](https://numbersman77.github.io/savvy)
 
