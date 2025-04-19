@@ -14,7 +14,7 @@ output:
 
 ![](img/book.jpg){width=300}
 
-Together with my colleagues [Prof. Leo Held](https://www.ebpi.uzh.ch/en/aboutus/departments/biostatistics/teambiostats/held.html) and [Prof. Burkhardt Seifert](https://www.researchgate.net/profile/Burkhardt_Seifert) from the [Division of Biostatistics](https://www.ebpi.uzh.ch/en/aboutus/departments/biostatistics.html) at the [University of Zurich](http://www.uzh.ch) I have written an introductory biostatistics textbook (in german).
+Together with my colleagues [Prof. Leo Held](https://www.ebpi.uzh.ch/en/research/biostat_department/group_biostatistics/team/held.html) and [Prof. Burkhardt Seifert](https://www.researchgate.net/profile/Burkhardt_Seifert) from the [Division of Biostatistics](https://www.ebpi.uzh.ch/en/research/biostat_department.html) at the [University of Zurich](http://www.uzh.ch) I have written an introductory biostatistics textbook (in german).
 
 [Link Pearson (publisher)](https://elibrary.pearson.de/book/99.150005/9783863267018)
 
