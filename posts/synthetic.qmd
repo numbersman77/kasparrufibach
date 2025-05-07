@@ -29,6 +29,10 @@ There are instances where we run a study, e.g. a single-arm trial, and would lik
 
 Synthetic data can be generated as control arm, and/or treatment arm.
 
+# Download this file
+
+You can download this file `r xfun::embed_file('synthetic.qmd', text = "here")`
+
 # Question
 
 In theory, once one has a simulation engine, one can generate an arbitrary number of patients. The following questions then may be asked:
