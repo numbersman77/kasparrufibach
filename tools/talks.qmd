@@ -16,6 +16,14 @@ tab1[tab1[, 4] == "[slides](NA)", 4] <- ""
 i11 <- (is.na(tab$video) == FALSE)
 tab1[i11, 4] <- paste(tab1[, 4], " | [video](", tab$video, ")", sep = "")[i11]
 
+# podcast
+i11 <- (is.na(tab$podcast) == FALSE)
+tab1[i11, 4] <- paste(tab1[, 4], " | [podcast](", tab$podcast, ")", sep = "")[i11]
+
+# linkedin
+i11 <- (is.na(tab$linkedin) == FALSE)
+tab1[i11, 4] <- paste(tab1[, 4], " | [linkedin](", tab$linkedin, ")", sep = "")[i11]
+
 kable(tab1, col.names = c("Date", "Event", "Title", "Material", "Comment"))
 ```
 
