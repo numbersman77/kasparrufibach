@@ -22,6 +22,10 @@ I am a member of the [board](https://baselbiometrics.github.io/home/docs/board.h
 
 Together with Cornelia Kunz from Boehringer Ingelheim and Mouna Akacha from Novartis I have initiated the EFSPI statistical methodology leaders group. Find more details [here](https://efspieurope.github.io/efspi/methods/methods_intro.html).
 
+# ICH E20 expert writing group
+
+I am a member of the [ICH E20 expert writing group](https://www.ich.org/page/efficacy-guidelines#19-1) as a deputy topic lead, representing [EFPIA](https://www.efpia.eu/).
+
 # Oncology estimand working group
 
 I co-founded and co-lead this group. Find more details [here](http://www.oncoestimand.org).
