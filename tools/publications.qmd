@@ -11,7 +11,7 @@ tab <- filter(pubs, Type == ut[j])
 tab1 <- rep("", nrow(tab))
 
 # add status or journal
-i1 <- (tab$Status == "s")
+i1 <- (tab$Status == "s" & tab$Type != "Book chapters")
 tab1 <- paste(tab$First, " (**", tab$Year, "**). ", tab$Title, ". _", tab$Journal, "_", sep = "")
 
 # accepted papers
@@ -19,12 +19,16 @@ i0 <- (tab$Status == "ta")
 tab1[i0] <- paste(tab1, ", to appear.", sep = "")[i0]
 
 # papers with reference and Volume
-i2 <- ((tab$Status %in% c("s", "ta")) == FALSE & is.na(tab$Volume) == FALSE)
+i2 <- ((tab$Status %in% c("s", "ta")) == FALSE & is.na(tab$Volume) == FALSE & tab$Type != "Book chapters")
 tab1[i2] <- paste(tab1, ", **", tab$Issue, "**(", tab$Volume, "), ", tab$Pages, ". ", sep = "")[i2]
 
 # papers with reference and no volume
-i2b <- ((tab$Status %in% c("s", "ta")) == FALSE & is.na(tab$Volume) == TRUE)
+i2b <- ((tab$Status %in% c("s", "ta")) == FALSE & is.na(tab$Volume) == TRUE & tab$Type != "Book chapters")
 tab1[i2b] <- paste(tab1, ", **", tab$Issue, "**:", tab$Pages, ". ", sep = "")[i2b]
+
+# book chapters
+i2c <- (tab$Type == "Book chapters")
+tab1[i2c] <- paste(tab$First, " (**", tab$Year, "**). ", tab$Title, ". ", tab$Journal, ", ", tab$Pages, ". ", sep = "")[i2c]
 
 # add full stop to submitted papers
 tab1[i1] <- paste(tab1, ".", sep = "")[i1]
