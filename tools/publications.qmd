@@ -41,9 +41,9 @@ tab1[i3] <- paste(tab1, " [doi](", tab$doi, ") | ", sep = "")[i3]
 i4 <- (is.na(tab$preprint) == FALSE)
 tab1[i4] <- paste(tab1, " [preprint](", tab$preprint, ") | ", sep = "")[i4]
 
-# markdown
-i5 <- (is.na(tab$markdown) == FALSE)
-tab1[i5] <- paste(tab1, " [markdown](", tab$markdown, ") | ", sep = "")[i5]
+# quarto
+i5 <- (is.na(tab$quarto) == FALSE)
+tab1[i5] <- paste(tab1, " [quarto](", tab$quarto, ") | ", sep = "")[i5]
 
 # github
 i6 <- (is.na(tab$github) == FALSE)
