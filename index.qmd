@@ -82,6 +82,7 @@ Key achievements in my career:
 - Built global network among statisticians in drug development, i.e. industry, regulators, and academia.
 - Biostatistics or biometrics lead for filings of oncology and fertility drugs. 
 - Designed, ran, analyzed, and discussed with regulators various early and late phase clinical trials.
+- At both Roche and Merck, co-developed and rolled-out quantitative decision-making framework in R&D.
 - Co-founded and co-lead X-industry working groups with global impact: [Oncology estimand WG](http://www.oncoestimand.org/), [EFSPI statistical methodology leaders group](https://efspieurope.github.io/efspi/methods/methods_intro.html), [SAVVY](https://numbersman77.github.io/savvy).
 - Chair (3x) and member of Scientific Committee (since 2017) of organizing committee of [EFSPI regulatory statistics workshop](http://www.efspiworkshop.org/).
 - Co-chair of [ISCB46 2026 in Basel](https://iscb2025.info/) (global statistics conference with >850 attendees).
