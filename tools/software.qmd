@@ -26,9 +26,9 @@ tab1[i7] <- paste(tab1, " [R package on cran](", tab$cran, ") | ", sep = "")[i7]
 i6 <- (is.na(tab$github) == FALSE)
 tab1[i6] <- paste(tab1, " [github](", tab$github, ") | ", sep = "")[i6]
 
-# markdown
-i5 <- (is.na(tab$markdown) == FALSE)
-tab1[i5] <- paste(tab1, " [markdown](", tab$markdown, ") | ", sep = "")[i5]
+# quarto
+i5 <- (is.na(tab$quarto) == FALSE)
+tab1[i5] <- paste(tab1, " [quarto](", tab$quarto, ") | ", sep = "")[i5]
 
 # doi
 i3 <- (is.na(tab$doi) == FALSE)
