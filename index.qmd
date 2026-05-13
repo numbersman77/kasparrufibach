@@ -49,7 +49,7 @@ up <- as.data.frame(read_excel(paste(path, "/data/update.xlsx", sep = ""), col_t
 </thead>
 </table>
 
-I am a mathematical statistician. Through more than 20 years in various biostatistical roles I have complemented my thorough theoretical background with expertise in biostatistics. I am passionate about applying this expertise to solve problems in pharmaceutical drug development.
+I have a strong biostatistical background and a deep understanding of clinical research, regulatory environments, and the product development lifecycle within life sciences. I am passionate about applying this expertise to solve problems in pharmaceutical drug development.
 
 <a href="files/01_Kaspar_Rufibach_CV.pdf" class="btn btn-info"><i class="fa fa-download"></i> CV</a>
 <a href="files/02_Kaspar_Rufibach_publications.pdf" class="btn btn-info"><i class="fa fa-download"></i> Publications</a>
