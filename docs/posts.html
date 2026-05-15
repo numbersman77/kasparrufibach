@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Kaspar Rufibach, biostatistician -</title>
+<title>posts – Kaspar Rufibach, biostatistician</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,22 +30,30 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-89d2e01a7dd95fe96bf9048e4ce53d05.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -54,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -64,74 +73,76 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Kaspar Rufibach, biostatistician</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-publications" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-publications" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Publications</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-publications">    
         <li>
-    <a class="dropdown-item" href="./publications_stat.html" rel="" target="">
+    <a class="dropdown-item" href="./publications_stat.html">
  <span class="dropdown-text">Statistical methodological publications</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./textbook.html" rel="" target="">
+    <a class="dropdown-item" href="./textbook.html">
  <span class="dropdown-text">Biostatistical textbook</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./publications_med.html" rel="" target="">
+    <a class="dropdown-item" href="./publications_med.html">
  <span class="dropdown-text">Biomedical publications</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./software.html" rel="" target="">
- <span class="menu-text">Software</span></a>
+    <a class="nav-link" href="./software.html"> 
+<span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./podcasts.html" rel="" target="">
- <span class="menu-text">Podcasts</span></a>
+    <a class="nav-link" href="./podcasts.html"> 
+<span class="menu-text">Podcasts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./talks.html" rel="" target="">
- <span class="menu-text">Talks</span></a>
+    <a class="nav-link" href="./talks.html"> 
+<span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./teaching.html" rel="" target="">
- <span class="menu-text">Teaching &amp; supervision</span></a>
+    <a class="nav-link" href="./teaching.html"> 
+<span class="menu-text">Teaching &amp; supervision</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./working.html" rel="" target="">
- <span class="menu-text">Working groups</span></a>
+    <a class="nav-link" href="./working.html"> 
+<span class="menu-text">Working groups</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./conference.html" rel="" target="">
- <span class="menu-text">Conference organization</span></a>
+    <a class="nav-link" href="./conference.html"> 
+<span class="menu-text">Conference organization</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" rel="" target="" aria-current="page">
- <span class="menu-text">Posts</span></a>
+    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+<span class="menu-text">Posts</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -139,179 +150,183 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
 
 
 
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Posts on linkedin</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Posts on twitter</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Posts on linkedin</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Posts on twitter</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">2026-05-15: <strong>Uncertainty when stopping at an interim is proportional to absolute information</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-clinical-share-7461010236905046016-NMUX?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">2026-05-06: <strong>Communication challenges for complex designs</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-inference-clinicaltrials-share-7457711254632079362-rNIo?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2026-05-03: <strong>Some questions on FDA’s real time trial monitoring announcement</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_tldr-we-want-to-analyze-trials-in-real-ugcPost-7456645705613508609-1AjI?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2026-03-03: <strong>Opening of registration of 11th EFSPI regulatory statistics workshop</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_we-did-it-again-the-registration-for-the-activity-7434543762435043330-myiL?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2026-01-08: <strong>Edited book “Estimands in Clinical Trials”</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-estimands-activity-7415005842665684992-iP7h?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2025-12-10: <strong>Theoretical joint distribution of logrank test for PFS and OS</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-illnessdeathmodel-oncology-activity-7404519700908482560-7cFJ?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2025-12-01: <strong>Three podcast episodes and ICH E20 expert writing group</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-drugdevelopment-activity-7401249156087832576-1kp0?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2025-11-28: <strong>Do you have precedence?</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_innovation-biostatistics-drugdevelopment-activity-7400184689887453184-gfFv?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2025-11-03: <strong>Marginal vs.&nbsp;conditional estimands</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-activity-7391236766805942273-iIJj?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2025-11-03: <strong>Nine questions about stratification and covariate adjustment: Part 3</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-randomization-activity-7391225880049623040-L6px?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2025-10-29: <strong>Nature paper on covid vaccines amplifying effect of immunotherapy: immortal bias!</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_specifying-a-target-trial-prevents-immortal-activity-7388872606973665281-vIvO?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2025-10-26: <strong>Nine questions about stratification and covariate adjustment: Part 2</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-collaboration-randomization-activity-7388225051055063041-Hn0U?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2025-10-11: <strong>Nine questions about stratification and covariate adjustment: Part 1</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_in-virtually-all-clinical-trials-we-stratify-activity-7382149707659153408-lEbc?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2025-09-27: <strong>EORTC one-day event on p-values</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-collaboration-activity-7377702182470443008-EFvl?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2025-08-02: <strong>Confirmatory adaptive designs (Part 2): Does an adaptive design change POS?</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-adaptive-innovation-activity-7357467143770107904-z2iF?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2025-07-30: <strong>Confirmatory adaptive designs (Part 1): general comments</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-clinicaltrial-activity-7356399592587894784-WvJW?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2025-07-17: <strong>Considerations for the planning, conduct and reporting of clinical trials with interim analyses: paper in Trials</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-rct-collaboration-activity-7351595946427707395-05n5?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> | <a href="https://oncoestimand.github.io/trials_interim/trials_interim.html">code</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2025-05-07: <strong>You cannot generate data out of nothing! On synthetic data and digital twins</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-ai-digitaltwins-activity-7325784869295321088-cm20?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> | <a href="https://numbersman77.github.io/kasparrufibach/code/synthetic/synthetic.html">code</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2025-03-09: <strong>Why are we not just using AI to predict probability of success for a clinical trial?</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-activity-7304570515048845312-szCG?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2025-02-08: <strong>Hypothesis test, significance test, and confidence intervals</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_i-am-not-known-for-shying-away-from-a-good-activity-7293928656089874432-HL6G?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAQJ2qsB_r_XsYhAPWyf_WQeC5V6NOcbIXo">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2025-01-29: <strong>Talk about how to talk: my learnings and experiences for presenting as a statistician</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_statisticians-or-quantitative-scientists-activity-7290457598770769920-9eMh?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2024-11-27: <strong>Table 2 fallacy</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-causalinference-criticalthinking-activity-7267496265070919681-anzZ?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2024-10-19: <strong>Joint PSI/EFSPI Causal Inference SIG Webinar: Opportunities in applying a causal inference framework during the analysis of an RCT</strong> | <a href="https://www.linkedin.com/posts/psi-statisticians-in-the-pharmaceutical-industry_joint-psiefspi-causal-inference-sig-webinar-activity-7264223319606849536-K5z3?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2024-10-03: <strong>Considerations for the planning, conduct and reporting of clinical trials with interim analyses</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-rct-collaboration-activity-7247509486347677696-5gsF?utm_source=share&amp;utm_medium=member_desktop">link</a> | <a href="https://oncoestimand.github.io/trials_interim/trials_interim.html">code</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2024-09-30: <strong>How to deal with a contaminated analysis set?</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-rct-activity-7246483265480531969-LBbz?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2024-09-22: <strong>What is your intention behind using “intention-to-treat”?</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-drugdevelopment-estimand-activity-7243560426016247808-p_yg?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2024-09-02: <strong>Drug developers quiz!</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-drugdevelopment-activity-7236264361198071808-HUsy?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2024-08-29: <strong>Quote from 1984 about historical controls</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_statisticians-and-real-world-data-sicentists-activity-7235016997456007168-1_vN?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2024-08-05: <strong>Embed investigator- and independently reviewed PFS into the estimand framework</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-estimands-oncology-activity-7226250092066844674-f0U_?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2024-07-31: <strong>Kaspar to leave Roche</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_today-31st-july-2024-is-my-last-day-at-activity-7224340614119649280-1UOB?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2024-07-17: <strong>Efficient estimation in subgroups in RCTs</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_rct-biostatistics-drugdevelopment-activity-7219424232336670720-hLhE?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2024-07-09: <strong>Non-proportional hazards in drug development: Part 2</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-statistics-rct-activity-7216546075749289984-vSK7?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2024-06-30: <strong>Non-proportional hazards in drug development</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-survival-estimand-activity-7213277769428779008-IqOv?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2024-05-31: <strong>SAVVY overview paper with recommendations on updates of safety guidelines</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-safety-benefitrisk-activity-7202352154823573504-Upwe?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2024-03-06: <strong>False negative risk of futility analyses is typically overestimated</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-interimanalysis-trialdesign-activity-7171170319980871680-in91?utm_source=share&amp;utm_medium=member_desktop">link</a> | <a href="https://numbersman77.github.io/kasparrufibach/code/futility_fp/20240306_futility_fp.html">code</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2024-03-01: <strong>Why and what a non-statistician should know about causal inference</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-causalinference-activity-7169401987397066752-aA2P?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2023-11-10: <strong>Implementation of statistical innovation in a pharmaceutical company</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_innovation-biostatistics-estimand-activity-7128840875215855616-WxVA?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2023-10-13: <strong>Futility analyses – they are a strategic tool in drug development and not at all futile!</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-clinicaltrial-interimanalysis-activity-7118537293337907200-i7ui?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2023-10-12: <strong>Crossover in oncology trials - presentation at FDA / Lungevity statistical forum</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-clinicaltrials-oncology-activity-7118305540534874112-MiCU?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2023-08-09: <strong>Minimal detectable difference in a trial with time-to-event primary endpoint</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_here-is-a-question-for-anyone-working-on-activity-7094488116748529664-9TYr?utm_source=share&amp;utm_medium=member_desktop">link</a> | <a href="code/mdd/20230809_mdd.html">code</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2023-08-05: <strong>Discussion of JSM session “Recent advances in Bayesian power and probability of success”, providing punch lines of my talk on quantitative decision-making</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_supporting-quantitative-decision-making-about-activity-7093541725926760448-Dnqn?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2023-07-12: <strong>Statistical Methodology Leaders in Drug Development</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-statistics-drugdevelopment-activity-7084613881087578113-teIX?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2023-07-06: <strong>Summary of talk at BBS next generation event</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_pharmaindustry-work-experience-activity-7082629933637722112-FxSC?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2023-07-05: <strong>Effective statistician podcast on driving statistical innovation</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_drugdevelopment-innovation-biostatistics-activity-7082025955627552769-iWml?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2023-06-06: <strong>Why can’t we simply get rid of RCTs?</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_clinicaltrials-estimands-randomization-activity-7071772566452854785-yxZs?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2023-06-05: <strong>Why do we randomize in RCTs?</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_clinicaltrials-randomization-rwd-activity-7071398951765065728-blQn?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2023-04-02: <strong>Why do we do interim analyses in clinical trials?</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_clinicaltrials-drugdevelopment-like-activity-7048390244101943296-xr7j?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2023-03-29: <strong>Quantification of follow-up</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_oncology-estimand-working-group-activity-7046725113534132226-3uW5?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2023-03-07: <strong>How can the estimands addendum framework be “married” with competing risks?</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-estimand-drugdevelopment-activity-7038765477778620416-oNH9?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2023-02-02: <strong>Trial design using multistate modelling for PFS and OS</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_oncology-multistate-survivalanalysis-activity-7024352913275678720-f1p1?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2023-01-04: <strong>Estimation of AE risk in RCTs</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_biostatistics-timetoevent-safety-activity-6997583241654206464-Bh1y?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2022-12-02: <strong>Are regulators on board with estimands?</strong> | <a href="https://www.linkedin.com/pulse/regulators-board-estimands-kaspar-rufibach/">link</a> |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2022-05-01: <strong>Thoughts on my 10th year anniversary at Roche</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_drugdevelopment-science-biostatistics-activity-6926819927689461760-tjzF?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">2022-02-09: <strong>Academia - Industry collaboration award of Ulm University for Roche’s long-term collaboration with Jan Beyersmann</strong> | <a href="https://www.linkedin.com/posts/kasparrufibach_dies-academicus-2022-activity-6899251846717026304-Bo0N?utm_source=share&amp;utm_medium=member_desktop">link</a> |</td>
 </tr>
 </tbody>
@@ -322,7 +337,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">2022-06-13: <strong>Follow-up quantification for time-to-event endpoint: Asking the right questions and make numbers meaningful</strong> | <a href="https://twitter.com/numbersman77/status/1536264526181679106">link</a> |</td>
@@ -357,43 +372,58 @@ ul.task-list li input[type="checkbox"] {
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
@@ -401,195 +431,348 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
       return codeEl.innerText;
     }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn) {
-    const config = {
-      allowHTML: true,
-      content: contentFn,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start'
-    };
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
       });
     }
-  }
-});
-</script>
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
+
 
 
 
