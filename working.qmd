@@ -20,7 +20,7 @@ I am a member of the [board](https://baselbiometrics.github.io/home/docs/board.h
 
 # EFSPI statistical methodology leaders
 
-Together with Cornelia Kunz from Boehringer Ingelheim and Mouna Akacha from Novartis I have initiated the EFSPI statistical methodology leaders group. Find more details [here](https://efspieurope.github.io/efspi/methods/methods_intro.html).
+Together with Mouna Akacha from Novartis and Tobias Mielke from J&J I co-lead the EFSPI statistical methodology leaders group. Find more details [here](https://efspieurope.github.io/eml/).
 
 # ICH E20 expert writing group
 
