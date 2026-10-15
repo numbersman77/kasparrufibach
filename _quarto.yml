@@ -14,6 +14,7 @@ project:
     - podcasts.qmd
     - code/
     - conference.qmd
+    - talkabouttalk.qmd
     
 website:
   title: "Kaspar Rufibach, biostatistician"

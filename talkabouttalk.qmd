@@ -1,0 +1,52 @@
+---
+title: "Considerations about presentating as a quantitative scientist"
+author: "Kaspar Rufibach, Advanced Biostatistical Sciences (ABS), Merck KGaA"
+date: last-modified
+execute:   
+  freeze: auto  # re-render only when source changes
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    highlight-style: pygments
+---
+
+# Purpose
+
+This page summarizes some considerations that I developed while running "StatsBoost" sessions at Roche and Merck KGaA.
+
+# How do I build the agenda and pick topics?
+
+- I do not pick topics I want to talk about. I pick topics where I sense, in my daily work as drug developer, that 
+  - ...people are curious about,
+  - ...people lack understanding, 
+  - ...are hyped and my ambition is then to see behind the hype and demystify. 
+
+# What does it take?
+
+- Being well connected within and outside the company (in my case: [EFSPI methods leaders](https://efspieurope.github.io/eml/), [ICH E20 expert writing group](https://www.ich.org/page/efficacy-guidelines#19-1), [BBS board](https://baselbiometrics.github.io/home/docs/board.html), ...) helps a lot. This provides a bird's eye view on what is coming, what is relevant, etc.
+- I do not restrict myself to "biostatistical" topics, but look beyond and also seek collaboration.
+- My primary goal is education, interactive discussion, and experience sharing. 
+- A nice side-effect of these sessions, especially those that deal with topics at the margin of my own expertise, is that _I_ actually learn a lot. 
+- I build the slidedecks not around the usual "scientific buildup" which is:
+  - Problem statement, 
+  - methods description, 
+  - properties of the method, 
+  - and finally some artificial example. 
+  
+  Rather, I start with a question (or some related generic question derived from it) that typically, I have heard from someone in another function. With this, I immediately have the attention of the audience. This is also a litmus test for the relevance of what you intend to talk about: If you cannot formulate such a question then maybe the topic you want to talk about is more of interest to _you_ than the _audience_?
+- I build all StatsBoosts around drug development examples, most of them from my own experience. This requires vast drug development experience and past exposure to many trials, phases, molecules, programs, data modalities (RCT, RWD), therapeutic areas, quantitative methods, health authority interactions, filings, etc.
+- I believe an asset of my presentation style is this experience: I can literally tell a "war story" in all these boosts: What regulators said, what the team failed to consider, what governance told the team, what new methodology was developed based on an example (most of my [scientific publications](https://numbersman77.github.io/kasparrufibach/publications_stat.html) are in fact motivated by actual drug development challenges), etc.
+
+
+# Presentation style
+
+- No formulas. Not overly technical.
+- No densely populated slides.
+- Be passionate. This is hard to fake - you _have_ to be passionate about what you talk, and the audience needs to feel it.
+- The audience will take maybe two, maximal three messages with them from your talk. Put these first. A good exercise for this is to distill your talk into tweet-length (160 characters). That generates brutal honesty in you being clear about the messages. If you cannot do this you are not there yet with digesting your own material.
+- My learnings from giving many talks to various audiences is also summarized in [this linkedin post](https://www.linkedin.com/posts/kasparrufibach_statisticians-or-quantitative-scientists-share-7290457595746676737-SQxP/?utm_source=share&utm_medium=member_desktop).
+
+
+
